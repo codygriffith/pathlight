@@ -2,6 +2,7 @@
 // const url = 'http://checkip.amazonaws.com/';
 let response;
 const lighthouse = require('lighthouse');
+const { v4: uuidv4 } = require('uuid');
 // const chromeLauncher = require('chrome-launcher');
 const chromium = require('chrome-aws-lambda');
 const { URL } = require('url');
@@ -17,14 +18,8 @@ const tableName = process.env.SAMPLE_TABLE;
 
 exports.auditUrlHandler = async (event, context) => {
     try {
-        if (event.httpMethod !== 'POST') {
-            throw new Error(`postMethod only accepts POST method, you tried: ${event.httpMethod} method.`);
-        }
-
-        // Get id and name from the body of the request
-        const body = JSON.parse(event.body);
-        const url = body.url;
-        const id = body.id;
+        const id = uuidv4();
+        const url = event.Records[0].body;
 
         const chrome2 = await chromium.puppeteer.launch({
             args: chromium.args,
@@ -34,31 +29,34 @@ exports.auditUrlHandler = async (event, context) => {
             ignoreHTTPSErrors: true,
         });
 
-        console.log(chrome2)
-        console.log(await chromium.executablePath)
-        console.log('red')
-
         let page = await chrome2.newPage();
 
         await page.goto(`http://${url}` || 'https://alenthea.com');
-
-        let title = await page.title();
-
-        console.log(title);
 
         // const chrome = await chromeLauncher.launch({ chromeFlags: ['--headless','--no-sandbox','--disable-gpu','--disable-dev-shm-usage'] });
         const options = { logLevel: 'info', output: 'html', port: (new URL(chrome2.wsEndpoint())).port };
         const runnerResult = await lighthouse(`http://${url}`, options);
 
         console.log('Report is done for', runnerResult.lhr.finalUrl);
-        console.log('Performance score was', runnerResult.lhr.categories);
-        // console.log(runnerResult)
 
+        const performanceScore = runnerResult.lhr.categories["performance"].score;
+        const accessibilityScore = runnerResult.lhr.categories["accessibility"].score;
         const bestPracticesScore = runnerResult.lhr.categories["best-practices"].score;
+        const seoScore = runnerResult.lhr.categories["seo"].score;
 
         var params = {
-            TableName : tableName,
-            Item: { id : id, url : url, scores: {bestPractices: bestPracticesScore}}
+            TableName: tableName,
+            Item: {
+                id: id,
+                url: url,
+                timestamp: new Date().toUTCString(),
+                scores: {
+                    performance: performanceScore,
+                    accessibility: accessibilityScore,
+                    bestPractices: bestPracticesScore,
+                    seo: seoScore
+                }
+            }
         };
 
         const result = await docClient.put(params).promise();

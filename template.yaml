@@ -122,12 +122,18 @@ Resources:
         Variables:
           CHROME_PATH: /tmp/chromium
           SAMPLE_TABLE: !Ref SampleTable
+      # Events:
+      #   Api:
+      #     Type: Api
+      #     Properties:
+      #       Path: /
+      #       Method: POST
       Events:
-        Api:
-          Type: Api
+        MySQSEvent:
+          Type: SQS
           Properties:
-            Path: /
-            Method: POST
+            Queue: !GetAtt MySqsQueue.Arn
+            BatchSize: 1
 
   # DynamoDB table to store item: {id: &lt;ID&gt;, name: &lt;NAME&gt;}
   SampleTable:
@@ -140,7 +146,46 @@ Resources:
         ReadCapacityUnits: 2
         WriteCapacityUnits: 2
 
+  MySqsQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      VisibilityTimeout: 360
+      # Policies:
+      #   Id: __default_policy_ID
+      #   Statement:
+      #     Sid: __owner_statement
+      #     Effect: Allow
+      #     Principal: "*"
+      #     Action: SQS:*
+      #     Resource: "*"
+
+  MySqsPolicy:
+    Type: AWS::SQS::QueuePolicy
+    Properties: 
+      PolicyDocument:
+        Id: __default_policy_ID1
+        Version: "2012-10-17"
+        Statement:
+          Sid: __owner_statement
+          Effect: Allow
+          Principal: "*"
+          Action: SQS:*
+          Resource: "*"
+      Queues:
+        - !Ref MySqsQueue
+  
+
+        # Events:
+        #   Api:
+        #     Type: Api
+        #     Properties:
+        #       Path: /
+        #       Method: POST
+
 Outputs:
   WebEndpoint:
     Description: "API Gateway endpoint URL for Prod stage"
     Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+  SqsEndpoint:
+    Description: "SQS Endpoint"
+    Value: !Ref MySqsQueue
