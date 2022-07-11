@@ -12,6 +12,15 @@ Description: >-
 Transform:
 - AWS::Serverless-2016-10-31
 
+Parameters:
+  NetlifyToken:
+    Type: String
+    Description: Netlify token.
+  
+  GithubToken:
+    Type: String
+    Description: Github token.
+
 # Resources declares the AWS resources that you want to include in the stack
 # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html
 Resources:
@@ -149,6 +158,34 @@ Resources:
         #       Path: /
         #       Method: POST
 
+
+# # # # # # # # # # #
+
+  myNetlifySite:
+    Type: Custom::NetlifySite
+    Properties:
+      ServiceToken: {
+        "Fn::Join": ["",
+          ["arn:aws:lambda:",{"Ref":"AWS::Region"},":453208706738:function:custom-resource-netlify-site"]
+        ]
+      }
+      netlifyToken: !Ref NetlifyToken
+      githubToken: !Ref GithubToken
+      name: your-netlify-site-name
+      # custom_domain: site.com
+      build_settings:
+        repo_url: https://github.com/codygriffith/pathlight
+        repo_branch: master
+        dir: build
+        cmd: npm run build
+        allowed_branches:
+          - master
+        # env:
+        #   MY_ENV_KEY: hello
+        #   MY_OTHER_KEY: there
+
+
+
 Outputs:
   WebEndpoint:
     Description: "API Gateway endpoint URL for Prod stage"
@@ -156,3 +193,8 @@ Outputs:
   SqsEndpoint:
     Description: "SQS Endpoint"
     Value: !Ref MySqsQueue
+  NetlifySiteId:
+    Description: Netlify site ID.
+    Value: { "Fn::GetAtt" : [ "myNetlifySite", "netlifySiteId" ]}
+
+
