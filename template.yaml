@@ -175,11 +175,12 @@ Resources:
       # custom_domain: site.com
       build_settings:
         repo_url: https://github.com/codygriffith/pathlight
-        repo_branch: master
-        dir: build
+        repo_branch: main
+        base: app
+        dir: src
         cmd: npm run build
         allowed_branches:
-          - master
+          - main
         # env:
         #   MY_ENV_KEY: hello
         #   MY_OTHER_KEY: there
