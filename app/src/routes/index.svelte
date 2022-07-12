@@ -3,29 +3,24 @@
 </script>
 
 <script>
-	// import { GET, POST } from '$lib/store.js';
+	import { GET, POST } from '$lib/store.js';
 	import { onMount } from 'svelte';
 	// import process from 'process';
-	import dotenv from 'dotenv';
-	dotenv.config({ path: '.env' });
+	// import dotenv from 'dotenv';
+	// dotenv.config({ path: '.env' });
 
-	const API_ENDPOINT = process.env.API_ENDPOINT;
+	// const API_ENDPOINT = process.env.API_ENDPOINT;
 
-	console.log(API_ENDPOINT);
+	// console.log(API_ENDPOINT);
 	console.log('red');
 
 	onMount(async () => {
 		// if (!isLoggedIn) {
 		// 	goto('/');
 		// }
-
-		// console.log(API_ENDPOINT);
 		console.log('red');
-		const rawReports = await fetch(API_ENDPOINT, {
-			method: 'GET'
-		});
-		const reports = await rawReports.json();
-		console.log(reports);
+		const response = await GET('/get_audits');
+		console.log(response.reports)
 	});
 </script>
 

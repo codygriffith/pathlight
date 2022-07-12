@@ -50,9 +50,9 @@ function createUser() {
 }
 
 export async function GET(api) {
-    const token = JSON.parse(localStorage.getItem('gotrue.user')).token.access_token
+    // const token = JSON.parse(localStorage.getItem('gotrue.user')).token.access_token
     return (await fetch('/api' + api, {
-        headers: { Authorization: 'Bearer ' + token }
+        // headers: { Authorization: 'Bearer ' + token }s
     })).json()
 }
 
