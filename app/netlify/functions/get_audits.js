@@ -1,4 +1,7 @@
+console.log('blue')
 import fetch from "node-fetch";
+console.log('green')
+
 
 export async function handler (event, context) {
     // const { identity, user } = context.clientContext;
