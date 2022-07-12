@@ -27,7 +27,10 @@ exports.getAllItemsHandler = async (event) => {
     const items = data.Items;
 
     const response = {
-        statusCode: 200,
+        statusCode: 201,
+        headers: {
+            "Access-Control-Allow-Origin": "*"
+        },
         body: JSON.stringify(items)
     };
 

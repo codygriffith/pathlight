@@ -64,7 +64,10 @@ exports.auditUrlHandler = async (event, context) => {
         console.log(result)
 
         response = {
-            'statusCode': 200,
+            'statusCode': 201,
+            'headers': {
+                'Access-Control-Allow-Origin': '*'
+            },
             'body': runnerResult.report
         }
 

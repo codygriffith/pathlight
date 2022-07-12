@@ -181,7 +181,8 @@ Resources:
         cmd: npm run build
         allowed_branches:
           - main
-        # env:
+        env:
+          API_ENDPOINT: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
         #   MY_ENV_KEY: hello
         #   MY_OTHER_KEY: there
 
