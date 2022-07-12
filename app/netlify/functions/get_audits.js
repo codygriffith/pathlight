@@ -2,8 +2,7 @@ console.log('blue')
 import fetch from "node-fetch";
 console.log('green')
 
-
-export async function handler (event, context) {
+exports.handler = async function (event, context) {
     // const { identity, user } = context.clientContext;
     // if ( user || identity ) {
         console.log('red')
@@ -15,4 +14,4 @@ export async function handler (event, context) {
             body: JSON.stringify({ reports }),
         };
     // }
-}
+};
