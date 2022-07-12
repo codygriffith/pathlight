@@ -6,12 +6,21 @@
 	// import { GET, POST } from '$lib/store.js';
 	import { onMount } from 'svelte';
 	// import process from 'process';
-	const API_ENDPOINT = process.env.API_ENDPOINT
+	import dotenv from 'dotenv';
+	dotenv.config({ path: '.env' });
+
+	const API_ENDPOINT = process.env.API_ENDPOINT;
+
+	console.log(API_ENDPOINT);
+	console.log('red');
 
 	onMount(async () => {
 		// if (!isLoggedIn) {
 		// 	goto('/');
 		// }
+
+		// console.log(API_ENDPOINT);
+		console.log('red');
 		const rawReports = await fetch(API_ENDPOINT, {
 			method: 'GET'
 		});
