@@ -1,4 +1,4 @@
-const { v4: uuidv4 } = require('uuid');
+import { v4 as uuidv4 } from 'uuid';
 import fetch from "node-fetch";
 
 exports.handler = async function (event, context) {
