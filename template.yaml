@@ -183,6 +183,7 @@ Resources:
           - main
         env:
           API_ENDPOINT: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+          SQS_ENDPOINT: !Ref MySqsQueue
         #   MY_ENV_KEY: hello
         #   MY_OTHER_KEY: there
 

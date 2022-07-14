@@ -18,8 +18,9 @@ const tableName = process.env.SAMPLE_TABLE;
 
 exports.auditUrlHandler = async (event, context) => {
     try {
-        const id = uuidv4();
-        const url = event.Records[0].body;
+        // const id = uuidv4();
+        const id = event.Records[0].body.id;
+        const url = event.Records[0].body.url;
 
         const chrome2 = await chromium.puppeteer.launch({
             args: chromium.args,

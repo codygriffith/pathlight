@@ -1,13 +1,13 @@
 <script>
 	import { page } from '$app/stores';
-	import logo from './svelte-logo.svg';
+	import logo from './Pathlight_logo-dark.png';
 	import Hamburger from './Hamburger.svelte';
 
 	export let open = false;
 </script>
 
-<header class="w-full flex flex-wrap md:flex-row justify-between p-3 md:p-auto md:justify-around bg-[#0d0d0d] text-white text-lg py-4">
-	<a href="/" class="w-[20%] md:w-[5%]">
+<header class="w-full flex flex-wrap md:flex-row justify-between p-3 md:p-auto md:justify-around bg-[#ede7ff] text-black text-lg py-4">
+	<a href="/" class="w-[20%] md:w-[12%] mb-2">
 		<img src={logo} alt="Logo" />
 	</a>
 
@@ -15,10 +15,11 @@
 
 	<nav class="flex items-end w-full md:w-auto flex-col max-h-0 md:max-h-full md:flex-row md:items-center text-2xl sm:text-2xl md:text-base lg:text-xl" class:open>
 		<a class="mx-4" class:active={$page.url.pathname === '/#'} sveltekit:prefetch href="/#">Try It</a>
-		<a class="mx-4" class:active={$page.url.pathname === '/#'} sveltekit:prefetch href="/#">Blog</a>
+		<!-- <a class="mx-4" class:active={$page.url.pathname === '/#'} sveltekit:prefetch href="/#">Blog</a> -->
+		<a class="mx-4" class:active={$page.url.pathname === '/#'} sveltekit:prefetch href="/#">About</a>
 		<a class="mx-4" class:active={$page.url.pathname === '/#'} sveltekit:prefetch href="/#">Pricing</a>
-		<a class="mx-4" class:active={$page.url.pathname === '/#'} sveltekit:prefetch href="/#">Sign-Up</a>
-		<a class="mx-4" class:active={$page.url.pathname === '/#'} sveltekit:prefetch href="/#">Login</a>
+		<!-- <a class="mx-4" class:active={$page.url.pathname === '/#'} sveltekit:prefetch href="/#">Sign-Up</a> -->
+		<!-- <a class="mx-4" class:active={$page.url.pathname === '/#'} sveltekit:prefetch href="/#">Login</a> -->
 	</nav>
 </header>
 

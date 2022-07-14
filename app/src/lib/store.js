@@ -57,18 +57,19 @@ export async function GET(api) {
 }
 
 export async function POST(api, body) {
-    const token = JSON.parse(localStorage.getItem('gotrue.user')).token.access_token
+    // const token = JSON.parse(localStorage.getItem('gotrue.user')).token.access_token
+    console.log(body)
     const rawResponse = await fetch('/.netlify/functions' + api, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + token,
+            // 'Authorization': 'Bearer ' + token,
         },
         body: JSON.stringify(body)
     });
     const content = await rawResponse.json();
-    console.log(content);
+    // console.log(content);
     return content
 }
 

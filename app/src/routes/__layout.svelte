@@ -19,7 +19,7 @@
 	<slot />
 </main>
 
-<ContactForm />
+<!-- <ContactForm /> -->
 
 <Footer />
 
