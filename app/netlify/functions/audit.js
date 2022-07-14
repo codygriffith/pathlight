@@ -9,7 +9,7 @@ exports.handler = async function (event, context) {
     console.log(event.body)
     const url = JSON.parse(event.body);
 
-    let body = {url, id}
+    let body = JSON.stringify({url, id})
 
     console.log(body)
 
