@@ -34,7 +34,7 @@
 		// console.log(response.reports)
 		reports = response.reports;
 		console.log(reports);
-		console.log(JSON.stringify(reports[13].rawJson))
+		// console.log(JSON.stringify(reports[13].rawJson))
 	});
 </script>
 
@@ -86,7 +86,7 @@
 								</tr>
 							</thead>
 							<tbody class="divide-y divide-gray-200 bg-white flex-col-reverse text-base">
-								{#if response.reports[0].url !== undefined}
+								{#if response.reports.length == undefined}
 									{#each response.reports.reverse() as report}
 										<tr>
 											<td class="whitespace-nowrap py-4 pl-4 pr-3 font-medium text-gray-900 sm:pl-6">{report.url}</td>
