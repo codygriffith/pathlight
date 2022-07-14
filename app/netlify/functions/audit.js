@@ -13,7 +13,7 @@ exports.handler = async function (event, context) {
 
     console.log(body)
 
-    let res = await fetch(`https://sqs.us-east-1.amazonaws.com/054477282436/pathlight-MySqsQueue-7Av0SPeLhEXe/?Action=SendMessage&MessageBody=${body}`);
+    let res = await fetch(`${process.env.SQS_ENDPOINT}/?Action=SendMessage&MessageBody=${body}`);
 
     return {
         statusCode: 200,

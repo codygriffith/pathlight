@@ -34,6 +34,7 @@
 		// console.log(response.reports)
 		reports = response.reports;
 		console.log(reports);
+		console.log(JSON.stringify(reports[13].rawJson))
 	});
 </script>
 

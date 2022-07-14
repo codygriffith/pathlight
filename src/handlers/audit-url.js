@@ -19,8 +19,9 @@ const tableName = process.env.SAMPLE_TABLE;
 exports.auditUrlHandler = async (event, context) => {
     try {
         // const id = uuidv4();
-        const id = event.Records[0].body.id;
-        const url = event.Records[0].body.url;
+        const req = JSON.parse(event.Records[0].body);
+        const id = req.id;
+        const url = req.url;
 
         const chrome2 = await chromium.puppeteer.launch({
             args: chromium.args,
@@ -40,10 +41,14 @@ exports.auditUrlHandler = async (event, context) => {
 
         console.log('Report is done for', runnerResult.lhr.finalUrl);
 
+        // console.log(runnerResult.lhr)
+        // console.log(JSON.stringify(runnerResult.lhr))
+
         const performanceScore = runnerResult.lhr.categories["performance"].score;
         const accessibilityScore = runnerResult.lhr.categories["accessibility"].score;
         const bestPracticesScore = runnerResult.lhr.categories["best-practices"].score;
         const seoScore = runnerResult.lhr.categories["seo"].score;
+        const pwaScore = runnerResult.lhr.categories["pwa"].score;
 
         var params = {
             TableName: tableName,
@@ -55,8 +60,10 @@ exports.auditUrlHandler = async (event, context) => {
                     performance: performanceScore,
                     accessibility: accessibilityScore,
                     bestPractices: bestPracticesScore,
-                    seo: seoScore
-                }
+                    seo: seoScore,
+                    pwa: pwaScore
+                },
+                rawJson: JSON.stringify(runnerResult.lhr)
             }
         };
 

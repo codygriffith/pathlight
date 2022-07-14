@@ -171,7 +171,7 @@ Resources:
       }
       netlifyToken: !Ref NetlifyToken
       githubToken: !Ref GithubToken
-      name: your-netlify-site-name
+      name: pathlight.com
       # custom_domain: site.com
       build_settings:
         repo_url: https://github.com/codygriffith/pathlight
