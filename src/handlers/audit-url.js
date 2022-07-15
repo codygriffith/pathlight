@@ -41,6 +41,10 @@ exports.auditUrlHandler = async (event, context) => {
 
         console.log('Report is done for', runnerResult.lhr.finalUrl);
 
+        // console.log(runnerResult)
+
+        // console.log(JSON.stringify(runnerResult))
+
         // console.log(runnerResult.lhr)
         // console.log(JSON.stringify(runnerResult.lhr))
 
@@ -49,6 +53,11 @@ exports.auditUrlHandler = async (event, context) => {
         const bestPracticesScore = runnerResult.lhr.categories["best-practices"].score;
         const seoScore = runnerResult.lhr.categories["seo"].score;
         const pwaScore = runnerResult.lhr.categories["pwa"].score;
+
+        console.log(runnerResult.lhr.audits)
+
+        delete runnerResult.lhr.audits["full-page-screenshot"]
+        
 
         var params = {
             TableName: tableName,
@@ -70,6 +79,7 @@ exports.auditUrlHandler = async (event, context) => {
         const result = await docClient.put(params).promise();
 
         console.log(result)
+
 
         response = {
             'statusCode': 201,
