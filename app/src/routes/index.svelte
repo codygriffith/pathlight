@@ -96,7 +96,7 @@
 											<td class="whitespace-nowrap px-3 py-4 text-gray-500">{report.scores.bestPractices}</td>
 											<td class="whitespace-nowrap px-3 py-4 text-gray-500">{report.scores.seo}</td>
 											<td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-												<a href="#" class="text-indigo-600 hover:text-indigo-900">View Report</a>
+												<a href="/report/view?id={report.id}" class="text-indigo-600 hover:text-indigo-900">View Report</a>
 											</td>
 										</tr>
 									{/each}

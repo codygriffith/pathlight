@@ -36,7 +36,7 @@ exports.auditUrlHandler = async (event, context) => {
         await page.goto(`http://${url}` || 'https://alenthea.com');
 
         // const chrome = await chromeLauncher.launch({ chromeFlags: ['--headless','--no-sandbox','--disable-gpu','--disable-dev-shm-usage'] });
-        const options = { logLevel: 'info', output: 'html', port: (new URL(chrome2.wsEndpoint())).port };
+        const options = { logLevel: 'info', skipAudits: ['full-page-screenshot'], output: 'html', port: (new URL(chrome2.wsEndpoint())).port };
         const runnerResult = await lighthouse(`http://${url}`, options);
 
         console.log('Report is done for', runnerResult.lhr.finalUrl);
@@ -55,10 +55,16 @@ exports.auditUrlHandler = async (event, context) => {
         const pwaScore = runnerResult.lhr.categories["pwa"].score;
 
         console.log(runnerResult.lhr.audits)
+        // runnerResult.lhr.audits['full-page-screenshot'].details.screenshot.data = "data:image/jpeg;"
+        // runnerResult.lhr.audits['full-page-screenshot'].details.nodes = "{}"
+        console.log(runnerResult.lhr.audits['screenshot-thumbnails'].details.items)
+        runnerResult.lhr.audits['screenshot-thumbnails'].details.items.splice(4, 5);
+        console.log(runnerResult.lhr.audits['screenshot-thumbnails'].details.items)
+        // console.log(runnerResult.lhr.audits['full-page-screenshot'])
 
-        delete runnerResult.lhr.audits["full-page-screenshot"]
+
+        // delete runnerResult.lhr.audits["full-page-screenshot"]
         
-
         var params = {
             TableName: tableName,
             Item: {
