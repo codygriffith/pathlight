@@ -36,13 +36,17 @@ Resources:
       Timeout: 100
       Description: A simple example includes a HTTP get method to get all items from a DynamoDB table.
       Policies:
-        # Give Create/Read/Update/Delete Permissions to the SampleTable
+        # Give Create/Read/Update/Delete Permissions to the ReportTable
         - DynamoDBCrudPolicy:
-            TableName: !Ref SampleTable
+            TableName: !Ref ReportTable
+        - DynamoDBCrudPolicy:
+            TableName: !Ref RawReportTable
       Environment:
         Variables:
           # Make table name accessible as environment variable from function code during execution
-          SAMPLE_TABLE: !Ref SampleTable
+          REPORT_TABLE: !Ref ReportTable
+          RAW_REPORT_TABLE: !Ref RawReportTable
+
       Events:
         Api:
           Type: Api
@@ -62,13 +66,16 @@ Resources:
       Timeout: 100
       Description: A simple example includes a HTTP get method to get one item by id from a DynamoDB table.
       Policies:
-        # Give Create/Read/Update/Delete Permissions to the SampleTable
+        # Give Create/Read/Update/Delete Permissions to the ReportTable
         - DynamoDBCrudPolicy:
-            TableName: !Ref SampleTable
+            TableName: !Ref ReportTable
+        - DynamoDBCrudPolicy:
+            TableName: !Ref RawReportTable
       Environment:
         Variables:
           # Make table name accessible as environment variable from function code during execution
-          SAMPLE_TABLE: !Ref SampleTable
+          REPORT_TABLE: !Ref ReportTable
+          RAW_REPORT_TABLE: !Ref RawReportTable
       Events:
         Api:
           Type: Api
@@ -91,13 +98,16 @@ Resources:
       EphemeralStorage:
         Size: 1024
       Policies:
-        # Give Create/Read/Update/Delete Permissions to the SampleTable
+        # Give Create/Read/Update/Delete Permissions to the ReportTable
         - DynamoDBCrudPolicy:
-            TableName: !Ref SampleTable
+            TableName: !Ref ReportTable
+        - DynamoDBCrudPolicy:
+            TableName: !Ref RawReportTable
       Environment:
         Variables:
           CHROME_PATH: /tmp/chromium
-          SAMPLE_TABLE: !Ref SampleTable
+          REPORT_TABLE: !Ref ReportTable
+          RAW_REPORT_TABLE: !Ref RawReportTable
       # Events:
       #   Api:
       #     Type: Api
@@ -112,7 +122,7 @@ Resources:
             BatchSize: 1
 
   # DynamoDB table to store item: {id: &lt;ID&gt;, name: &lt;NAME&gt;}
-  SampleTable:
+  ReportTable:
     Type: AWS::Serverless::SimpleTable
     Properties:
       PrimaryKey:
@@ -121,6 +131,17 @@ Resources:
       ProvisionedThroughput:
         ReadCapacityUnits: 2
         WriteCapacityUnits: 2
+
+  RawReportTable:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      PrimaryKey:
+        Name: id
+        Type: String
+      ProvisionedThroughput:
+        ReadCapacityUnits: 2
+        WriteCapacityUnits: 2
+
 
   MySqsQueue:
     Type: AWS::SQS::Queue

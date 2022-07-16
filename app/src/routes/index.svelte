@@ -5,9 +5,10 @@
 <script>
 	import { GET, POST } from '$lib/store.js';
 	import { onMount } from 'svelte';
-	let response = { reports: [{}] };
+	let response = { reports: {items:[{}]} };
 	let reports;
-	let url;
+	let url = '';
+	let lastEvaluatedKey;
 	// import process from 'process';
 	// import dotenv from 'dotenv';
 	// dotenv.config({ path: '.env' });
@@ -17,11 +18,27 @@
 	// console.log(API_ENDPOINT);
 
 	async function requestAudit() {
-		// let res = await fetch(`https://sqs.us-east-1.amazonaws.com/054477282436/pathlight-MySqsQueue-7Av0SPeLhEXe/?Action=SendMessage&MessageBody=${url}`);
-		let res  = await POST('/audit', url);
-		console.log(res)
+		const times = 100;
+		for(var i = 0; i < times; i++){
+    		// doSomething();
+			let res  = await POST('/audit', url);
+			console.log(res)
+		}
 		url = '';
-	}  
+		// let res = await fetch(`https://sqs.us-east-1.amazonaws.com/054477282436/pathlight-MySqsQueue-7Av0SPeLhEXe/?Action=SendMessage&MessageBody=${url}`);
+	}
+
+	async function loadReports() {
+		let res  = await GET(`/get_audits?exclusiveStartKey=${lastEvaluatedKey.id}`);
+		// lastEvaluatedKey = res.reports.lastEvaluatedKey || null;
+		console.log(res.reports.items)
+		console.log(res.reports.lastEvaluatedKey)
+		lastEvaluatedKey = res.reports.lastEvaluatedKey || null
+		reports = reports.concat(res.reports.items);
+		// lastEvaluatedKey = res.reports.
+		// reports = response.reports.items;
+		// console.log(reports);
+	}
 
 	console.log('red');
 
@@ -32,10 +49,13 @@
 		console.log('red');
 		response = await GET('/get_audits');
 		// console.log(response.reports)
-		reports = response.reports;
+		reports = response.reports.items;
+		lastEvaluatedKey = response.reports.lastEvaluatedKey || null;
 		console.log(reports);
+		console.log(lastEvaluatedKey)
 		// console.log(JSON.stringify(reports[13].rawJson))
 	});
+	// loadReports()
 </script>
 
 <svelte:head>
@@ -52,7 +72,7 @@
 		
 		<label for="url">https://</label>
 		<input name="url" bind:value={url} class="text-center w-[75.5%]" placeholder="pathlight.com"/>
-		<button on:click|once={requestAudit} type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Scan Url</button>
+		<button on:click={requestAudit} type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Scan Url</button>
 	</form>
 
 	<h1 class="text-3xl font-medium mb-3 mt-10">Latest Scans</h1>
@@ -86,8 +106,8 @@
 								</tr>
 							</thead>
 							<tbody class="divide-y divide-gray-200 bg-white flex-col-reverse text-base">
-								{#if response.reports[0].url !== undefined && response.reports[0].url !== null}
-									{#each response.reports.reverse() as report}
+								{#if reports !== undefined && reports !== null}
+									{#each reports.reverse() as report}
 										<tr>
 											<td class="whitespace-nowrap py-4 pl-4 pr-3 font-medium text-gray-900 sm:pl-6">{report.url}</td>
 											<td class="whitespace-nowrap px-3 py-4 text-gray-500">{report.timestamp}</td>
@@ -111,6 +131,8 @@
 				</div>
 			</div>
 		</div>
+		<button on:click={loadReports} type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Scan Url</button>
+		
 	</div>
 
 	<!-- {#if response.reports[0].url !== undefined}
