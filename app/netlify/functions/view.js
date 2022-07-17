@@ -4,6 +4,7 @@ import reportHtml from "./report.txt";
 exports.handler = async function (event, context) {
   // const { identity, user } = context.clientContext;
   // if ( user || identity ) {
+  console.log('rd')
 
   const rawReport = await fetch(`${process.env.API_ENDPOINT}/${event.queryStringParameters.id}`);
   const report = await rawReport.json();
