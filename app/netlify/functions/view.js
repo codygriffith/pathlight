@@ -1,5 +1,7 @@
+console.log('heheh')
 import fetch from "node-fetch";
 import reportHtml from "./report.txt";
+console.log('ttttttttt')
 
 exports.handler = async function (event, context) {
   // const { identity, user } = context.clientContext;
