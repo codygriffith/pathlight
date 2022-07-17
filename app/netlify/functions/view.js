@@ -1,6 +1,6 @@
 console.log('heheh')
 import fetch from "node-fetch";
-// import reportHtml from "./report.txt";
+import reportHtml from "./report.txt";
 console.log('ttttttttt')
 
 exports.handler = async function (event, context) {
@@ -12,7 +12,7 @@ exports.handler = async function (event, context) {
 
   return {
     statusCode: 200,
-    body: report.rawJson,
+    body: reportHtml.replace('__GET_LIGHTHOUSE_JSON__', report.rawJson),
   };
   // }
 };
