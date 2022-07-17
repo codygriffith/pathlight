@@ -135,20 +135,7 @@
 		
 	</div>
 
-	<!-- {#if response.reports[0].url !== undefined}
-		{#each response.reports as report}
-			<div class="flex w-[70%] text-lg justify-evenly">
-				<p class="w-[25%] text-center">{report.url}</p>
-				<p class="w-[35%] text-center">{report.timestamp}</p>
-				<p class="w-[5%] text-center">{report.scores.performance}</p>
-				<p class="w-[5%] text-center">{report.scores.accessibility}</p>
-				<p class="w-[5%] text-center">{report.scores.bestPractices}</p>
-				<p class="w-[5%] text-center">{report.scores.seo}</p>
-			</div>
-		{/each}
-	{:else}
-		Loading
-	{/if} -->
+	
 </div>
 
 <style>
