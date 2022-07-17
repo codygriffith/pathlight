@@ -1,6 +1,6 @@
 console.log('heheh')
-import fetch from "node-fetch";
-import reportHtml from "./report.txt";
+const fetch = require( "node-fetch");
+const reportHtml = require( "./report.txt");
 console.log('ttttttttt')
 
 exports.handler = async function (event, context) {
