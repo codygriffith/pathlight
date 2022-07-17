@@ -1,5 +1,5 @@
-import { v4 as uuidv4 } from 'uuid';
-import fetch from "node-fetch";
+const { v4: uuidv4 } = require('uuid');
+const fetch = require("node-fetch");
 
 exports.handler = async function (event, context) {
     // const { identity, user } = context.clientContext;
