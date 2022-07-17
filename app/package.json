@@ -31,7 +31,6 @@
     "@lukeed/uuid": "^2.0.0",
     "cookie": "^0.4.1",
     "dotenv": "^16.0.1",
-    "fake-progress": "^1.0.4",
     "node-fetch": "^2.6.7",
     "svelte-lighthouse-viewer": "^0.1.151",
     "uuid": "^8.3.2"
