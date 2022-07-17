@@ -14,6 +14,8 @@ exports.handler = async function (event, context) {
     console.log(body)
 
     let res = await fetch(`${process.env.SQS_ENDPOINT}/?Action=SendMessage&MessageBody=${body}`);
+    console.log('fdfds')
+    console.log(res)
 
     return {
         statusCode: 200,
