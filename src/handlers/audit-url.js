@@ -29,9 +29,9 @@ exports.auditUrlHandler = async (event, context) => {
             ignoreHTTPSErrors: true,
         });
 
-        let page = await chrome2.newPage();
+        // let page = await chrome2.newPage();
 
-        await page.goto(`https://${url}` || 'https://alenthea.com');
+        // await page.goto(`https://${url}` || 'https://alenthea.com');
 
         // Speed index audit giving intermittent null results. 
         const options = { logLevel: 'info', formFactor: 'desktop', screenEmulation:{disabled: true}, onlyCategories: ['performance', 'accessibility', 'best-practices', 'seo', 'pwa'], skipAudits: ['full-page-screenshot', 'script-treemap-data', 'critical-request-chains', 'screenshot-thumbnails', 'user-timings', 'network-requests'], output: 'html', port: (new URL(chrome2.wsEndpoint())).port }; //'final-screenshot', 'speed-index',
