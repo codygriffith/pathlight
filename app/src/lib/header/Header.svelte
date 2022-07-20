@@ -1,6 +1,6 @@
 <script>
 	import { page } from '$app/stores';
-	import logo from './Pathlight_logo-dark.png';
+	import logo from './Pathlight_logo-dark.svg';
 	import Hamburger from './Hamburger.svelte';
 
 	export let open = false;
