@@ -1,5 +1,5 @@
 <script>
-	import Logo from '$lib/header/svelte-logo.svg';
+	// import Logo from '$lib/header/svelte-logo.svg';
 </script>
 
 <footer class="relative bg-gray-100 pt-6 px-[10%]">
