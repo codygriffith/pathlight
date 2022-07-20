@@ -8,7 +8,7 @@
 			<!-- <a href="/" class="w-[20%] md:w-[10%] mb-2 flex justify-center space-x-3 md:justify-start m-auto md:m-0">
 				<img class="self-center text-2xl font-semibold w-full" src={Logo} alt="" srcset="" />
 			</a> -->
-			<h5 class="text-lg mt-0 mb-2 text-blueGray-600 text-center md:text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h5>
+			<p class="text-lg mt-0 mb-2 text-blueGray-600 text-center md:text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 		</div>
 
 		<div class="w-full lg:w-4/12 lg:px-4 text-right ml-auto">
