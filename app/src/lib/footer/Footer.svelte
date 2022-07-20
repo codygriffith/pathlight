@@ -5,9 +5,9 @@
 <footer class="relative bg-gray-100 pt-6 px-[10%]">
 	<div class="flex flex-wrap text-left lg:text-left">
 		<div class="w-full lg:w-6/12 px-4">
-			<a href="/" class="w-[20%] md:w-[10%] mb-2 flex justify-center space-x-3 md:justify-start m-auto md:m-0">
+			<!-- <a href="/" class="w-[20%] md:w-[10%] mb-2 flex justify-center space-x-3 md:justify-start m-auto md:m-0">
 				<img class="self-center text-2xl font-semibold w-full" src={Logo} alt="" srcset="" />
-			</a>
+			</a> -->
 			<h5 class="text-lg mt-0 mb-2 text-blueGray-600 text-center md:text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h5>
 		</div>
 
