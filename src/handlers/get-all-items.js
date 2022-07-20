@@ -17,13 +17,13 @@ exports.getAllItemsHandler = async (event) => {
     // All log statements are written to CloudWatch
     console.info('received:', event);
 
-    const exclusiveStartKey = event.queryStringParameters.exclusiveStartKey || null
+    const exclusiveStartKey = undefined;
 
     // get all items from the table (only first 1MB data, you can use `LastEvaluatedKey` to get the rest of data)
     // https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html#scan-property
     // https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Scan.html
 
-    if (exclusiveStartKey == undefined || exclusiveStartKey == null || exclusiveStartKey == 'undefined' || exclusiveStartKey == 'null') {
+    if (exclusiveStartKey === undefined) {
         console.log('hello')
         var params = {
             TableName: tableName
@@ -44,7 +44,7 @@ exports.getAllItemsHandler = async (event) => {
     const data = await docClient.scan(params).promise();
     console.log(data)
     const items = data.Items;
-    const lastEvaluatedKey = data.LastEvaluatedKey || null;
+    const lastEvaluatedKey = data.LastEvaluatedKey || '';
     console.log(lastEvaluatedKey)
 
     const response = {
