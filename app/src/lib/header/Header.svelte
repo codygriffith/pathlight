@@ -7,8 +7,8 @@
 </script>
 
 <header class="w-full flex flex-wrap md:flex-row justify-between p-3 md:p-auto md:justify-around bg-[#ede7ff] text-black text-lg py-4">
-	<a href="/" class="w-[20%] md:w-[12%] mb-2">
-		<img src={logo} alt="Logo" />
+	<a href="/" class="mb-2">
+		<img src={logo} alt="Logo" class="w-[20vw] md:w-[10vw] "/>
 	</a>
 
 	<Hamburger bind:open />
