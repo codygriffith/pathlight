@@ -6,15 +6,15 @@ exports.handler = async function (event, context) {
   // if ( user || identity ) {
   console.log('rd')
 
-  // const rawReport = await fetch(`${process.env.API_ENDPOINT}/${event.queryStringParameters.id}`);
+  const rawReport = await fetch(`${process.env.API_ENDPOINT}/${event.queryStringParameters.id}`);
 
   console.log('fdfd')
 
-  // const report = await rawReport.json();
+  const report = await rawReport.json();
 
   return {
     statusCode: 200,
-    // body: reportHtml.replace('__GET_LIGHTHOUSE_JSON__', report.rawJson),
+    body: reportHtml.replace('__GET_LIGHTHOUSE_JSON__', report.rawJson),
   };
   // }
 };
