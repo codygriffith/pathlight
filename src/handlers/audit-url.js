@@ -6,9 +6,9 @@ const lighthouse = require('lighthouse');
 // const chromium = require('chrome-aws-lambda');
 const chromium = require('@sparticuz/chrome-aws-lambda');
 
-const { v4: uuidv4 } = require('uuid');
+// const { v4: uuidv4 } = require('uuid');
 // const chromeLauncher = require('chrome-launcher');
-const chromium = require('chrome-aws-lambda');
+// const chromium = require('chrome-aws-lambda');
 
 const { URL } = require('url');
 
