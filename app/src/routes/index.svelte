@@ -138,9 +138,12 @@
 
 	<div class="text-center mb-3">
 		<h1 class="text-3xl font-medium mt-10">Latest Scans</h1>
-		{#if reports !== undefined && reports !== null}
+		{#if reports !== undefined && reports !== null} 
 			<p>{reports.length} total reports</p>
+		{:else}
+			<p>0</p>
 		{/if}
+
 	</div>
 
 	<div class="px-4 sm:px-6 lg:px-8 w-[70vw]">
@@ -151,20 +154,20 @@
 						<table class="min-w-full divide-y divide-gray-300">
 							<thead class="bg-gray-50 justify-between text-lg">
 								<tr>
-									<th scope="col" class="py-3.5 pl-4 pr-3 text-left font-semibold text-gray-900 sm:pl-6">Url</th>
+									<th scope="col" class="py-4 pl-4 pr-3 text-left w-[20%] font-semibold text-gray-900 sm:pl-6">Url</th>
 									<th scope="col" class="px-3 py-3.5 text-left font-semibold text-gray-900">Timestamp</th>
 									<th scope="col" class="px-3 py-3.5 text-left font-semibold text-gray-900">Performance</th>
 									<th scope="col" class="px-3 py-3.5 text-left font-semibold text-gray-900">Accessibility</th>
 									<th scope="col" class="px-3 py-3.5 text-left font-semibold text-gray-900">Best Practices</th>
 									<th scope="col" class="px-3 py-3.5 text-left font-semibold text-gray-900">SEO</th>
 									<th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6 text-sm">
-										{#if reports !== undefined && reports !== null}
-											{reports.length}
-										{/if}
+										<!-- {#if reports !== undefined && reports !== null} -->
+											<!-- {reports.length} -->
+										<!-- {/if} -->
 									</th>
 								</tr>
 							</thead>
-							<tbody class="divide-y divide-gray-200 bg-white flex-col-reverse text-base">
+							<tbody class="divide-y divide-gray-200 bg-white text-base">
 								{#if reports !== undefined && reports !== null}
 									{#each reports.reverse() as report}
 										<tr>
@@ -179,8 +182,8 @@
 											</td>
 										</tr>
 									{/each}
-								{:else}
-									Loading
+								<!-- {:else} -->
+									<!-- Loading -->
 								{/if}
 
 							</tbody>
@@ -189,7 +192,7 @@
 				</div>
 			</div>
 		</div>
-		<button on:click={loadReports} type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Scan Url</button>
+		<!-- <button on:click={loadReports} type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Scan Url</button> -->
 	</div>
 </div>
 

@@ -15,7 +15,7 @@
 
 <Header />
 
-<main>
+<main class="absolute">
 	<slot />
 </main>
 
@@ -32,4 +32,8 @@
 		margin: 0 auto;
 		box-sizing: border-box;
 	}
+/* 
+	:global(footer) {
+		position: absolute;
+	} */
 </style>
