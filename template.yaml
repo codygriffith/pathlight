@@ -207,12 +207,12 @@ Resources:
       custom_domain: pathlight.dev
       build_settings:
         repo_url: https://github.com/codygriffith/pathlight
-        repo_branch: master
+        repo_branch: main
         base: app
         dir: src
         cmd: npm run build
         allowed_branches:
-          - master
+          - main
         env:
           API_ENDPOINT: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
           SQS_ENDPOINT: !Ref MySqsQueue
