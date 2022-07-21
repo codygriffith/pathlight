@@ -141,7 +141,7 @@
 		{#if reports !== undefined && reports !== null} 
 			<p>{reports.length} total reports</p>
 		{:else}
-			<p>0</p>
+			<p>0 total reports</p>
 		{/if}
 
 	</div>
