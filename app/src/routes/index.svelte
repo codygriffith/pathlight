@@ -124,7 +124,6 @@
 												<a href="/report/view?id={report.id}" style="pointer-events: none" class="text-indigo-600 font-normal hover:text-indigo-900">View Report</a>
 											{/if}
 										</td>
-
 									</tr>
 								{/each}
 							</tbody>
@@ -134,16 +133,14 @@
 			</div>
 		</div>
 	{/if}
-	
 
 	<div class="text-center mb-3">
 		<h1 class="text-3xl font-medium mt-10">Latest Scans</h1>
-		{#if reports !== undefined && reports !== null} 
+		{#if reports !== undefined && reports !== null}
 			<p>{reports.length} total reports</p>
 		{:else}
 			<p>0 total reports</p>
 		{/if}
-
 	</div>
 
 	<div class="px-4 sm:px-6 lg:px-8 w-[70vw]">
@@ -162,7 +159,7 @@
 									<th scope="col" class="px-3 py-3.5 text-left font-semibold text-gray-900">SEO</th>
 									<th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6 text-sm">
 										<!-- {#if reports !== undefined && reports !== null} -->
-											<!-- {reports.length} -->
+										<!-- {reports.length} -->
 										<!-- {/if} -->
 									</th>
 								</tr>
@@ -182,10 +179,9 @@
 											</td>
 										</tr>
 									{/each}
-								<!-- {:else} -->
+									<!-- {:else} -->
 									<!-- Loading -->
 								{/if}
-
 							</tbody>
 						</table>
 					</div>
@@ -197,4 +193,15 @@
 </div>
 
 <style>
+	input:-webkit-autofill,
+	input:-webkit-autofill:hover,
+	input:-webkit-autofill:focus,
+	textarea:-webkit-autofill,
+	textarea:-webkit-autofill:hover,
+	textarea:-webkit-autofill:focus,
+	select:-webkit-autofill,
+	select:-webkit-autofill:hover,
+	select:-webkit-autofill:focus {
+		-webkit-box-shadow: 0 0 0px 1000px #fff inset;
+	}
 </style>
