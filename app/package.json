@@ -2,8 +2,8 @@
   "name": "alenthea-jam-template",
   "version": "0.0.1",
   "scripts": {
-    "dev": "svelte-kit dev --host",
-    "build": "svelte-kit build",
+    "dev": "vite dev --host",
+    "build": "vite build",
     "package": "svelte-kit package",
     "preview": "svelte-kit preview --host",
     "prepare": "svelte-kit sync",
@@ -23,7 +23,8 @@
     "prettier": "^2.5.1",
     "prettier-plugin-svelte": "^2.5.0",
     "svelte": "^3.46.0",
-    "tailwindcss": "^3.0.23"
+    "tailwindcss": "^3.0.23",
+    "vite": "^3.0.0"
   },
   "type": "module",
   "dependencies": {
@@ -32,6 +33,7 @@
     "cookie": "^0.4.1",
     "dotenv": "^16.0.1",
     "fake-progress": "^1.0.4",
+    "netlify-cli": "^10.10.2",
     "node-fetch": "^2.6.7",
     "svelte-lighthouse-viewer": "^0.1.151",
     "uuid": "^8.3.2"

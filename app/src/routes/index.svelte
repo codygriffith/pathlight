@@ -87,10 +87,10 @@
 
 	<h1 class="text-4xl font-bold mb-8">Website Audit</h1>
 
-	<form class="border-b-[.1vw] w-[30vw]">
-		<label for="url">https://</label>
-		<input name="url" bind:value={url} class="text-center w-[75.5%]" placeholder="pathlight.dev" />
-		<button on:click={requestAudit} type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Scan Url</button>
+	<form class="border-b-[.1vw] w-[35vw] flex justify-between h-[2.5vw]">
+		<label for="url" class="m-2 inline-flex items-center px-3 py-2 border border-transparent text-base">https://</label>
+		<input name="url" bind:value={url} class="text-center w-[70%]" placeholder="pathlight.dev" />
+		<button on:click={requestAudit} type="button" class="m-2 inline-flex items-center px-3 py-1 border border-transparent text-sm leading-4 font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Scan Url</button>
 	</form>
 
 	<!-- {#if pendingAudits.length > 0} -->
@@ -124,7 +124,6 @@
 												<a href="/report/view?id={report.id}" style="pointer-events: none" class="text-indigo-600 font-normal hover:text-indigo-900">View Report</a>
 											{/if}
 										</td>
-
 									</tr>
 								{/each}
 							</tbody>
@@ -134,12 +133,13 @@
 			</div>
 		</div>
 	{/if}
-	
 
 	<div class="text-center mb-3">
 		<h1 class="text-3xl font-medium mt-10">Latest Scans</h1>
 		{#if reports !== undefined && reports !== null}
 			<p>{reports.length} total reports</p>
+		{:else}
+			<p>0 total reports</p>
 		{/if}
 	</div>
 
@@ -151,20 +151,20 @@
 						<table class="min-w-full divide-y divide-gray-300">
 							<thead class="bg-gray-50 justify-between text-lg">
 								<tr>
-									<th scope="col" class="py-3.5 pl-4 pr-3 text-left font-semibold text-gray-900 sm:pl-6">Url</th>
+									<th scope="col" class="py-4 pl-4 pr-3 text-left w-[20%] font-semibold text-gray-900 sm:pl-6">Url</th>
 									<th scope="col" class="px-3 py-3.5 text-left font-semibold text-gray-900">Timestamp</th>
 									<th scope="col" class="px-3 py-3.5 text-left font-semibold text-gray-900">Performance</th>
 									<th scope="col" class="px-3 py-3.5 text-left font-semibold text-gray-900">Accessibility</th>
 									<th scope="col" class="px-3 py-3.5 text-left font-semibold text-gray-900">Best Practices</th>
 									<th scope="col" class="px-3 py-3.5 text-left font-semibold text-gray-900">SEO</th>
 									<th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6 text-sm">
-										{#if reports !== undefined && reports !== null}
-											{reports.length}
-										{/if}
+										<!-- {#if reports !== undefined && reports !== null} -->
+										<!-- {reports.length} -->
+										<!-- {/if} -->
 									</th>
 								</tr>
 							</thead>
-							<tbody class="divide-y divide-gray-200 bg-white flex-col-reverse text-base">
+							<tbody class="divide-y divide-gray-200 bg-white text-base">
 								{#if reports !== undefined && reports !== null}
 									{#each reports.reverse() as report}
 										<tr>
@@ -179,19 +179,29 @@
 											</td>
 										</tr>
 									{/each}
-								{:else}
-									Loading
+									<!-- {:else} -->
+									<!-- Loading -->
 								{/if}
-
 							</tbody>
 						</table>
 					</div>
 				</div>
 			</div>
 		</div>
-		<button on:click={loadReports} type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Scan Url</button>
+		<!-- <button on:click={loadReports} type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Scan Url</button> -->
 	</div>
 </div>
 
 <style>
+	input:-webkit-autofill,
+	input:-webkit-autofill:hover,
+	input:-webkit-autofill:focus,
+	textarea:-webkit-autofill,
+	textarea:-webkit-autofill:hover,
+	textarea:-webkit-autofill:focus,
+	select:-webkit-autofill,
+	select:-webkit-autofill:hover,
+	select:-webkit-autofill:focus {
+		-webkit-box-shadow: 0 0 0px 1000px #fff inset;
+	}
 </style>

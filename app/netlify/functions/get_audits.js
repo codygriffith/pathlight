@@ -6,7 +6,7 @@ exports.handler = async function (event, context) {
     // const { identity, user } = context.clientContext;
     // if ( user || identity ) {
         console.log('red')
-        exclusiveStartKey = event.queryStringParameters.exclusiveStartKey || null;
+        exclusiveStartKey = event.queryStringParameters.exclusiveStartKey || 'null';
         console.log(`Exclusive start key: ${exclusiveStartKey}`)
         // let reports = {};
         console.log(event)

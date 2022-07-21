@@ -97,6 +97,9 @@ Resources:
       Timeout: 240
       EphemeralStorage:
         Size: 1024
+      Layers:
+        - arn:aws:lambda:us-east-1:764866452798:layer:chrome-aws-lambda:31
+        - arn:aws:lambda:us-east-1:054477282436:layer:lighthouse-layer:1
       Policies:
         # Give Create/Read/Update/Delete Permissions to the ReportTable
         - DynamoDBCrudPolicy:
@@ -178,7 +181,15 @@ Resources:
         #     Properties:
         #       Path: /
         #       Method: POST
-
+  
+  # LighthouseLayer:
+  #   Type: AWS::Serverless::LayerVersion
+  #   Properties:
+  #     ContentUri: layers/lighthouse
+  #     CompatibleRuntimes:
+  #       - nodejs16.x
+  #   Metadata:
+  #     BuildMethod: nodejs16.x
 
 # # # # # # # # # # #
 
@@ -196,12 +207,12 @@ Resources:
       custom_domain: pathlight.dev
       build_settings:
         repo_url: https://github.com/codygriffith/pathlight
-        repo_branch: main
+        repo_branch: master
         base: app
         dir: src
         cmd: npm run build
         allowed_branches:
-          - main
+          - master
         env:
           API_ENDPOINT: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
           SQS_ENDPOINT: !Ref MySqsQueue
@@ -220,5 +231,8 @@ Outputs:
   NetlifySiteId:
     Description: Netlify site ID.
     Value: { "Fn::GetAtt" : [ "myNetlifySite", "netlifySiteId" ]}
+  # LighthouseLayer:
+  #   Description: Lighthouse layer.
+  #   Value: !Ref LighthouseLayer
 
 
