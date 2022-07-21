@@ -42,9 +42,9 @@ exports.auditUrlHandler = async (event, context) => {
             ignoreHTTPSErrors: true,
         });
 
-        // let page = await chrome2.newPage();
+        let page = await chrome2.newPage();
 
-        // await page.goto(`https://${url}` || 'https://alenthea.com');
+        await page.goto(`https://${url}` || 'https://alenthea.com');
 
 
         // Speed index audit giving intermittent null results. 
