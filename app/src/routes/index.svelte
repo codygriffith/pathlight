@@ -77,7 +77,7 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>Pathlight Web Audit</title>
 	<meta name="description" content="" />
 </svelte:head>
 
