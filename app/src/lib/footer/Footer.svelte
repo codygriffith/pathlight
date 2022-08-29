@@ -21,6 +21,6 @@
 	</div> -->
 	<!-- <hr class="my-6" /> -->
 	<div class="flex border-blueGray-600 flex-wrap items-center opacity-80 justify-center w-full md:w-4/12 md:px-4 mx-auto text-center text-sm text-blueGray-500/50 font-semibold py-1">
-		Copyright © 2022 by <a href="https://alenthea.com" class="text-blueGray-500 hover:text-blueGray-800">&nbsp; Alenthea</a>.
+		Copyright © 2022 by <a href="https://codygriffith.com" class="text-blueGray-500 hover:text-blueGray-800">Cody Griffith</a>.
 	</div>
 </footer>
