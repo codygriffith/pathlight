@@ -15,7 +15,7 @@
 
 <Header />
 
-<main class="absolute">
+<main class="absolute bg-white">
 	<slot />
 </main>
 
