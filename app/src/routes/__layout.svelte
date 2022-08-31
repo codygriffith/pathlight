@@ -15,7 +15,7 @@
 
 <Header />
 
-<main class="absolute bg-white">
+<main class="absolute">
 	<slot />
 </main>
 
@@ -36,4 +36,8 @@
 	:global(footer) {
 		position: absolute;
 	} */
+
+	:global(html) {
+		background: #000000c2;
+	}
 </style>

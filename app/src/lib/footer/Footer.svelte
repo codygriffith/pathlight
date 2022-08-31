@@ -2,7 +2,7 @@
 	// import Logo from '$lib/header/svelte-logo.svg';
 </script>
 
-<footer class="fixed bg-gray-100 px-[10%] w-full bottom-0">
+<footer class="fixed px-[10%] w-full bottom-0">
 	<!-- <div class="flex flex-wrap text-left lg:text-left">
 		<div class="w-full lg:w-6/12 px-4"> -->
 			<!-- <a href="/" class="w-[20%] md:w-[10%] mb-2 flex justify-center space-x-3 md:justify-start m-auto md:m-0">
@@ -20,7 +20,7 @@
 		</div>
 	</div> -->
 	<!-- <hr class="my-6" /> -->
-	<div class="flex border-blueGray-600 flex-wrap items-center opacity-80 justify-center w-full md:w-4/12 md:px-4 mx-auto text-center text-sm text-blueGray-500/50 font-semibold py-1">
-		Copyright © 2022 by <a href="https://codygriffith.com" class="text-blueGray-500 hover:text-blueGray-800">Cody Griffith</a>.
+	<div class="flex border-blueGray-600 flex-wrap items-center opacity-80 justify-center w-full md:w-4/12 md:px-4 mx-auto text-center text-xs text-white font-thin py-1">
+		Copyright © 2022 by <a href="https://codygriffith.com" class="ml-1 text-blueGray-500 hover:text-blueGray-800"> Cody Griffith</a>.
 	</div>
 </footer>

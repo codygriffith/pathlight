@@ -85,10 +85,10 @@
 <div class="flex flex-col items-center m-auto w-[100%] mt-16 mb-4">
 	<!-- <button on:click={() => p.start()} type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">End</button> -->
 
-	<h1 class="text-4xl font-bold mb-8">Website Audit</h1>
+	<h1 class="text-4xl font-bold mb-8 text-white">Website Audit</h1>
 
-	<form class="border-b-[.1vw] md:w-[65vw] lg:w-[35vw] flex justify-between">
-		<label for="url" class="m-2 inline-flex items-center px-3 py-2 border border-transparent text-base">https://</label>
+	<form class="border-b-[.1vw] md:w-[65vw] lg:w-[35vw] flex justify-between bg-white rounded-md drop-shadow-[0.5vw_0.6vw_1.5vw_#00000071] mx-2">
+		<label for="url" class="m-2 inline-flex items-center px-3 py-2 border border-transparent text-base lg:py-0 lg:px-0">https://</label>
 		<input name="url" bind:value={url} class="text-center w-[70%]" placeholder="pathlight.dev" />
 		<button on:click={requestAudit} type="button" class="whitespace-nowrap m-2 inline-flex items-center px-3 py-1 border border-transparent text-sm leading-4 font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Scan Url</button>
 	</form>
@@ -97,7 +97,7 @@
 	{#if reports !== undefined && reports !== null && pendingAudits.length > 0}
 		<div class="mt-8 flex flex-col mb-10">
 			<div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
-				<div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+				<div class="inline-block min-w-full py-2 align-middle md:px-6 lg:py-0 lg:px-0">
 					<div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
 						<table class="min-w-full divide-y divide-gray-300">
 							<thead class="bg-gray-50 justify-between text-sm">
@@ -134,7 +134,7 @@
 		</div>
 	{/if}
 
-	<div class="text-center mb-3">
+	<div class="text-center mb-3 text-white">
 		<h1 class="text-3xl font-medium mt-10">Latest Scans</h1>
 		{#if reports !== undefined && reports !== null}
 			<p>{reports.length} total reports</p>
@@ -143,12 +143,12 @@
 		{/if}
 	</div>
 
-	<div class="px-4 sm:px-6 lg:px-8 min-w-full lg:min-w-0 lg:w-[70vw]">
+	<div class="px-4 sm:px-6 lg:px-0 w-full min-w-full lg:min-w-0 lg:w-[70vw] ml-5">
 		<div class="mt-8 flex flex-col mb-10">
-			<div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
-				<div class="inline-block min-w-full py-2 align-middle lg:px-8">
-					<div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 lg:rounded-lg">
-						<table class="min-w-full divide-y divide-gray-300">
+			<div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8 drop-shadow-[0.5vw_0.6vw_1.5vw_#00000071]">
+				<div class="inline-block min-w-full py-2 align-middle lg:px-0 lg:py-0 ">
+					<div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 lg:rounded-md ">
+						<table class="min-w-full divide-y divide-gray-300 ">
 							<thead class="bg-gray-50 justify-between text-sm lg:text-lg">
 								<tr>
 									<th scope="col" class="py-4 pl-4 pr-3 text-left w-[20%] font-semibold text-gray-900 sm:pl-6">Url</th>
