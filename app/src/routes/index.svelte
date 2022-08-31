@@ -143,11 +143,11 @@
 		{/if}
 	</div>
 
-	<div class="px-4 sm:px-6 lg:px-0 w-full min-w-full lg:min-w-0 lg:w-[70vw] ml-5">
-		<div class="mt-8 flex flex-col mb-10">
-			<div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8 drop-shadow-[0.5vw_0.6vw_1.5vw_#00000071]">
+	<div class="px-4 sm:px-6 lg:px-0 w-full min-w-full lg:min-w-0 lg:w-[70vw]">
+		<div class="mt-8 flex flex-col mb-10 ml-2">
+			<div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8 drop-shadow-[0.5vw_0.6vw_1.5vw_#00000071] pr-2">
 				<div class="inline-block min-w-full py-2 align-middle lg:px-0 lg:py-0 ">
-					<div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 lg:rounded-md ">
+					<div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 rounded-md ">
 						<table class="min-w-full divide-y divide-gray-300 ">
 							<thead class="bg-gray-50 justify-between text-sm lg:text-lg">
 								<tr>
