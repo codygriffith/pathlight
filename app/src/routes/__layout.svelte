@@ -38,6 +38,6 @@
 	} */
 
 	:global(html) {
-		background: #000000c2;
+		background: #3d3d3d;
 	}
 </style>
