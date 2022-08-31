@@ -7,7 +7,7 @@
 	export let open = false;
 </script>
 
-<header class="w-full flex flex-wrap md:flex-row justify-between p-3 md:p-auto md:justify-around bg-[#0000007a] text-black text-lg py-4">
+<header class="w-full flex flex-wrap md:flex-row justify-between p-3 md:p-auto md:justify-around bg-[#202020] text-black text-lg py-4">
 	<a href="/" class="mb-2">
 		<!-- <img src={logo_dark} alt="Logo" width="10vw" height="1vw" class="w-[20vw] md:w-[10vw] "/> -->
 		<img src={logo_light} alt="Logo" width="10vw" height="1vw" class="w-[20vw] md:w-[10vw] "/>
