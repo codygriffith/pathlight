@@ -8,8 +8,7 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
-		adapter: adapter(),
-		inlineStyleThreshold: 30288,
+		adapter: adapter()
 	}
 };
 
