@@ -1,4 +1,0 @@
-node_modules
-.aws-sam/
-samconfig.toml
-app/.netlify/edge-functions-import-map.json
