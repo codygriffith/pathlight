@@ -8,6 +8,7 @@
 	<link rel="manifest" href="%sveltekit.assets%/manifest.json" />
 	%sveltekit.head%
 	<script>
+
 		if (
 			localStorage.theme === 'dark' ||
 			(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)

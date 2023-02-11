@@ -1,8 +1,7 @@
 <script>
 	// @ts-nocheck
-	window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', ({ matches: isDark }) => {
-		applyTheme();
-	});
+
+	import { browser } from '$app/environment';
 
 	const applyTheme = () => {
 		if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -13,7 +12,12 @@
 		}
 	};
 
-	applyTheme();
+	if (browser) {
+		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', ({ matches: isDark }) => {
+			applyTheme();
+		});
+		applyTheme();
+	}
 
 	const toggleTheme = () => {
 		if (!('theme' in localStorage) || localStorage.theme === 'light') {
