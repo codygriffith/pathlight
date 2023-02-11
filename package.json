@@ -36,6 +36,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@sveltejs/adapter-static": "^2.0.1",
 		"workbox-precaching": "^6.5.4"
 	}
 }
