@@ -1,5 +1,13 @@
+.DS_Store
 node_modules
-.aws-sam/
-samconfig.toml
-app/.netlify/edge-functions-import-map.json
-.netlify/
+/build
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Local Netlify folder
+.netlify
