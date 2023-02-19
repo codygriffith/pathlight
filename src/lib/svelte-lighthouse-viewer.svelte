@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { renderReport } from 'lighthouse-viewer';
+	import { renderReport } from './lighthouse-viewer.es.js';
 
 	export let json: any = {};
 

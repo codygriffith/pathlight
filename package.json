@@ -37,8 +37,6 @@
 	"type": "module",
 	"dependencies": {
 		"@sveltejs/adapter-netlify": "^2.0.3",
-		"lighthouse-viewer": "^0.1.192",
-		"svelte-lighthouse-viewer": "^0.1.203",
 		"workbox-precaching": "^6.5.4"
 	}
 }
