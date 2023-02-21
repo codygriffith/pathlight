@@ -8,11 +8,11 @@
 			<img class="h-8 w-auto sm:h-10 hidden dark:flex" src="/Pathlight_logo-light.svg" alt="" />
 			<img class="h-8 w-auto sm:h-10 dark:hidden" src="/Pathlight_logo-dark.svg" alt="" />
 		</a>
-		<!-- <div class="flex w-full justify-end">
+		<div class="flex w-full justify-end">
 			<nav class="flex px-8">
-				<a href="#" class="text-base font-medium text-gray-600 dark:text-gray-200 hover:text-gray-900 text-end"> Our Guide </a>
+				<a href="/our-guide" class="text-base font-medium text-gray-600 dark:text-gray-200 hover:text-gray-900 text-end"> Our Guide </a>
 			</nav>
-		</div> -->
+		</div>
 		<ThemeToggle />
 	</div>
 </div>
