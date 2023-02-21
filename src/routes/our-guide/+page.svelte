@@ -46,6 +46,6 @@
 				</div>
 			</article>
 		{/each}
-		<div class="w-full h-16 -mt-6 z-50 absolute bg-white" />
+		<div class="w-full h-16 -mt-6 z-50 absolute bg-white dark:bg-gray-700" />
 	</div>
 </div>
