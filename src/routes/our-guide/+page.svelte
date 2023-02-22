@@ -47,5 +47,5 @@
 			</article>
 		{/each}
 	</div>
-	<div class="w-full h-16 -mt-7 md:-mt-20 z-50 bg-white dark:bg-gray-700" />
+	<div class="w-full h-16 -mt-7 md:-mt-16 z-50 bg-white dark:bg-gray-700" />
 </div>
