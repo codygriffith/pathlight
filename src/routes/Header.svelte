@@ -10,7 +10,7 @@
 		</a>
 		<div class="flex w-full justify-end">
 			<nav class="flex px-8">
-				<a href="/our-guide" class="text-base font-medium text-gray-600 dark:text-gray-200 hover:text-gray-900 text-end"> Our Guide </a>
+				<a href="/our-guide" class="text-xs sm:text-base font-medium text-gray-600 dark:text-gray-200 hover:text-gray-900 text-end"> Our Guide </a>
 			</nav>
 		</div>
 		<ThemeToggle />
