@@ -1,7 +1,5 @@
 <script>
 	// @ts-nocheck
-	import { page } from '$app/stores';
-
 	/**
 	 * @type {{ post: { title: any; content: any; }; }}
 	 */
