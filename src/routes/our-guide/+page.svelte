@@ -21,7 +21,7 @@
 					<svg viewBox="0 0 9 9" class="-ml-[.35rem] right-full mr-6 top-2 -mb-36 text-slate-300 dark:text-slate-600 md:mr-12 w-[calc(0.5rem+1px)] h-[calc(0.5rem+1px)] overflow-visible sm:block">
 						<circle cx="4.5" cy="4.5" r="4.5" stroke="currentColor" class="dark:fill-white fill-slate-600" stroke-width="2" />
 					</svg>
-					<div class="relative hover:bg-slate-400/20 dark:hover:bg-slate-800/40 rounded-2xl pl-6 ml-8 p-6 my-14 w-full mt-28 mb-6">
+					<div class="relative hover:bg-slate-400/20 dark:hover:bg-slate-800/40 rounded-2xl pl-6 ml-4 sm:ml-8 p-6 my-14 w-full mt-28 mb-6">
 						<div class="font-semibold mb-2">{post.meta.title}</div>
 						<p>
 							{post.meta.summary}
@@ -46,6 +46,6 @@
 				</div>
 			</article>
 		{/each}
-		<div class="w-full h-16 -mt-6 z-50 absolute bg-white dark:bg-gray-700" />
 	</div>
+	<div class="w-full h-16 -mt-7 md:-mt-20 z-50 bg-white dark:bg-gray-700" />
 </div>

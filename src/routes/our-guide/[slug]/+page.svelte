@@ -10,12 +10,12 @@
 	<title>{data.title}</title>
 </svelte:head>
 
-<div id="article" class="flex flex-col w-full text-left max-w-[60rem] p-16 pt-8 mt-16 relative">
-	<h1 class="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-slate-200 md:text-4xl">{data.title}</h1>
+<div id="article" class="flex flex-col w-full text-left sm:max-w-[60rem] p-5 sm:p-16 pt-8 mt-16 relative">
+	<h1 class="text-lg sm:text-2xl font-extrabold tracking-tight leading-10 text-slate-900 dark:text-slate-200 md:text-4xl">{data.title}</h1>
 	<div class="mb-12">
 		<dl>
 			<dt class="sr-only">Date</dt>
-			<dd class="absolute pl-16 top-0 inset-x-0 text-slate-700 dark:text-slate-300"><time datetime="2022-12-15T15:00:00.000Z">{data.dateString}</time></dd>
+			<dd class="absolute pl-5 sm:pl-16 top-0 inset-x-0 text-slate-700 dark:text-slate-300"><time datetime="2022-12-15T15:00:00.000Z">{data.dateString}</time></dd>
 		</dl>
 	</div>
 	<svelte:component this={data.content} />
