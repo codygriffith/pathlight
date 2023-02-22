@@ -13,7 +13,7 @@
 	<div class="mb-12">
 		<dl>
 			<dt class="sr-only">Date</dt>
-			<dd class="absolute pl-16 top-0 inset-x-0 text-slate-700 dark:text-slate-400"><time datetime="2022-12-15T15:00:00.000Z">{data.dateString}</time></dd>
+			<dd class="absolute pl-16 top-0 inset-x-0 text-slate-700 dark:text-slate-300"><time datetime="2022-12-15T15:00:00.000Z">{data.dateString}</time></dd>
 		</dl>
 	</div>
 	<svelte:component this={data.content} />
