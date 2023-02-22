@@ -15,18 +15,18 @@
 		{#each data.allPosts as post}
 			<article class="w-full flex">
 				<div class="mr-14 mt-1">
-					<time class="">{post.meta.date}</time>
+					<time class="text-slate-700 dark:text-slate-100">{post.meta.date}</time>
 				</div>
 				<div class="border-l border-slate-500 dark:border-white w-full">
 					<svg viewBox="0 0 9 9" class="-ml-[.35rem] right-full mr-6 top-2 -mb-36 text-slate-300 dark:text-slate-600 md:mr-12 w-[calc(0.5rem+1px)] h-[calc(0.5rem+1px)] overflow-visible sm:block">
 						<circle cx="4.5" cy="4.5" r="4.5" stroke="currentColor" class="dark:fill-white fill-slate-600" stroke-width="2" />
 					</svg>
-					<div class="relative hover:bg-slate-800/40 rounded-2xl pl-6 ml-8 p-6 my-14 w-full mt-28 mb-6">
-						<div class="font-semibold">{post.meta.title}</div>
+					<div class="relative hover:bg-slate-400/20 dark:hover:bg-slate-800/40 rounded-2xl pl-6 ml-8 p-6 my-14 w-full mt-28 mb-6">
+						<div class="font-semibold mb-2">{post.meta.title}</div>
 						<p>
 							{post.meta.summary}
 						</p>
-						<a class="flex items-center text-sm text-sky-500 font-medium" href="/our-guide/understanding-the-different-metrics-in-lighthouse">
+						<a class="flex items-center text-sm text-sky-500 font-medium mt-4" href="/our-guide/understanding-the-different-metrics-in-lighthouse">
 							<span class="absolute inset-0 sm:rounded-2xl" />
 							Read more
 
