@@ -4,5 +4,8 @@
 		<li>
 			<a href="/privacy-policy" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
 		</li>
+		<li>
+			<a href="/contact" class="hover:underline">Contact</a>
+		</li>
 	</ul>
 </footer>
