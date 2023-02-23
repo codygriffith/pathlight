@@ -3,6 +3,10 @@
 	export let data;
 </script>
 
+<svelte:head>
+	<title>Pathlight Guide to Acing Your Web Audits</title>
+</svelte:head>
+
 <div class="flex flex-col w-full max-w-[70rem] p-5 sm:p-16 justify-center items-center">
 	<div class="flex flex-col">
 		<h2 class="text-5xl font-extrabold tracking-tight sm:text-4xl text-gray-600 dark:text-white" id="newsletter-headline">Our Guide to Acing Your Web Audits</h2>
