@@ -2,7 +2,7 @@
     <title>Privacy Policy</title>
 </svelte:head>
 
-<div class="max-w-[60rem] break-words mb-16">
+<div class="max-w-[60rem] break-words mb-16 px-6">
 	<h1 class="text-center m-8 text-5xl font-semibold">Privacy Policy</h1>
 	<p>
 		Pathlight ("us", "we", or "our") operates the <a href="https://pathlight.dev" target="_new">https://pathlight.dev</a> website (the "Service"). This page informs you of our policies regarding the collection,
@@ -124,7 +124,7 @@
 	}
 	li {
 		margin: 1% 0 !important;
-		margin-left: 3% !important;
+		margin-left: 1.5rem !important;
 		list-style: disc !important;
 	}
 	time {
