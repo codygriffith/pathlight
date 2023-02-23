@@ -1,3 +1,7 @@
+<svelte:head>
+    <title>Privacy Policy</title>
+</svelte:head>
+
 <div class="max-w-[60rem] break-words mb-16">
 	<h1 class="text-center m-8 text-5xl font-semibold">Privacy Policy</h1>
 	<p>
