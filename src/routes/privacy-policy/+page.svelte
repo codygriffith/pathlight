@@ -3,7 +3,7 @@
 </svelte:head>
 
 <div class="max-w-[60rem] break-words mb-16 px-6">
-	<h1 class="text-center m-8 text-5xl font-semibold">Privacy Policy</h1>
+	<h1 class="text-center my-8 text-5xl font-semibold">Privacy Policy</h1>
 	<p>
 		Pathlight ("us", "we", or "our") operates the <a href="https://pathlight.dev" target="_new">https://pathlight.dev</a> website (the "Service"). This page informs you of our policies regarding the collection,
 		use, and disclosure of personal data when you use our Service and the choices you have associated with that data.
