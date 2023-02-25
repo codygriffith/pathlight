@@ -1,6 +1,5 @@
 <script>
 	// @ts-ignore
-	import { browser } from '$app/environment';
 	/**
 	 * @type {any}
 	 */
@@ -11,18 +10,6 @@
 	let audit;
 
 	import SvelteLighthouseViewer from '$lib/svelte-lighthouse-viewer.svelte';
-	// if (browser) {
-
-	// }
-
-	// /**
-	//  * @type {string}
-	//  */
-
-	/**
-	 * @type {any}
-	 */
-	let reportHTML;
 
 	/**
 	 * @param {string} url
