@@ -1,3 +1,12 @@
+<script lang="ts">
+	import { SchemaTag } from '$lib/schema';
+	import { websiteSchema } from '$lib/schema';
+</script>
+
+<svelte:head>
+	<SchemaTag schema={websiteSchema} />
+</svelte:head>
+
 <div class="max-w-[70rem] w-full break-words mb-16 px-6">
 	<h1 class="text-center font-semibold text-4xl md:text-5xl mt-10 mb-4">About</h1>
 	<p class="text-center text-base md:text-lg mb-2">
