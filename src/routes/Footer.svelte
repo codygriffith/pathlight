@@ -1,14 +1,8 @@
-<footer class="flex w-full items-center justify-between py-2 px-5 sm:px-16 bg-gray-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-	<span class="text-sm">© 2023 &#8226; All Rights Reserved</span>
-	<ul class="flex flex-wrap items-center text-sm">
-		<li>
-			<a href="/about" class="mr-4 hover:underline md:mr-6 ">About</a>
-		</li>
-		<li>
-			<a href="/privacy-policy" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
-		</li>
-		<li>
-			<a href="/contact" class="hover:underline">Contact</a>
-		</li>
-	</ul>
+<footer class="flex flex-col-reverse sm:flex-row w-full items-center justify-between py-2 px-3 sm:px-5 sm:px-16 bg-gray-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+	<span class="my-2 sm:m-0">© 2023 &#8226; All Rights Reserved</span>
+	<div class="flex sm:flex-row flex-wrap my-2 sm:m-0 items-center">
+		<a href="/about" class="mr-4 hover:underline md:mr-6 p-1">About</a>
+		<a href="/privacy-policy" class="mr-4 hover:underline md:mr-6 p-1">Privacy Policy</a>
+		<a href="/contact" class="hover:underline p-1">Contact</a>
+	</div>
 </footer>
