@@ -38,6 +38,7 @@
 	"type": "module",
 	"dependencies": {
 		"@sveltejs/adapter-netlify": "^2.0.3",
+		"schema-dts": "^1.1.2",
 		"workbox-precaching": "^6.5.4"
 	}
 }
