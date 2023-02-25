@@ -1,5 +1,4 @@
 <script>
-	// @ts-ignore
 	/**
 	 * @type {any}
 	 */
