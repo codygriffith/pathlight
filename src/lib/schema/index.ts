@@ -10,3 +10,10 @@ export function serializeSchema(thing: Schema) {
     return `<script type="application/ld+json">${JSON.stringify(thing)}</script>`
 }
 
+export const websiteSchema: WithContext<WebSite> = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: site.name,
+    url: site.url,
+    description: site.description,
+}
