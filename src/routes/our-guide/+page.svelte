@@ -17,15 +17,15 @@
 	</div>
 	<div class="relative sm:pb-12 mt-16">
 		{#each data.allPosts as post}
-			<article class="w-full flex">
-				<div class="mr-14 mt-1">
+			<article class="w-full flex flex-col sm:flex-row">
+				<div class="mr-14 sm:mt-1 ml-10 sm:ml-0 text-sm">
 					<time class="text-slate-700 dark:text-slate-100">{post.meta.date}</time>
 				</div>
-				<div class="border-l border-slate-500 dark:border-white w-full">
+				<div class="border-l -mt-5 sm:mt-0 border-slate-500 dark:border-white w-full">
 					<svg viewBox="0 0 9 9" class="-ml-[.35rem] right-full mr-6 top-2 -mb-36 text-slate-300 dark:text-slate-600 md:mr-12 w-[calc(0.5rem+1px)] h-[calc(0.5rem+1px)] overflow-visible sm:block">
 						<circle cx="4.5" cy="4.5" r="4.5" stroke="currentColor" class="dark:fill-white fill-slate-600" stroke-width="2" />
 					</svg>
-					<div class="relative hover:bg-slate-400/20 dark:hover:bg-slate-800/40 rounded-2xl pl-6 ml-4 sm:ml-8 p-6 my-14 w-full mt-28 mb-6">
+					<div class="relative hover:bg-slate-400/20 dark:hover:bg-slate-800/40 rounded-2xl pl-6 ml-4 sm:ml-8 p-6 my-14 w-full mt-36 sm:mt-28 mb-6">
 						<div class="font-semibold mb-2">{post.meta.title}</div>
 						<p>
 							{post.meta.summary}
