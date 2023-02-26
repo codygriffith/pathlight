@@ -48,7 +48,7 @@
 	};
 </script>
 
-<div class="flex flex-col w-full max-w-[90rem] p-5 sm:p-16 justify-center items-center">
+<div class="flex flex-col w-full max-w-[90rem] p-5 sm:px-12 lg:px-20 2xl:px-72 pt-16 justify-center items-center">
 	<div class="flex flex-col w-full">
 		<div class="flex flex-col">
 			<h2 class="text-5xl font-extrabold tracking-tight sm:text-4xl text-gray-600 dark:text-white" id="newsletter-headline">Website Speed Test & Audit</h2>
