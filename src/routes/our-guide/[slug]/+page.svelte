@@ -10,7 +10,7 @@
 	<title>{data.title}</title>
 </svelte:head>
 
-<div id="article" class="flex flex-col w-full text-left sm:max-w-[60rem] p-5 sm:p-16 pt-8 mt-16 relative">
+<div id="article" class="flex flex-col w-full text-left sm:max-w-[65rem] p-5 sm:p-16 pt-8 mt-16 relative">
 	<h1 class="text-lg sm:text-2xl font-extrabold tracking-tight leading-10 text-slate-900 dark:text-slate-200 md:text-4xl">{data.title}</h1>
 	<div class="mb-12">
 		<dl>
