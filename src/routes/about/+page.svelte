@@ -7,7 +7,7 @@
 	<SchemaTag schema={websiteSchema} />
 </svelte:head>
 
-<div class="max-w-[70rem] w-full break-words mb-16 px-6">
+<div class="max-w-[65rem] w-full break-words mb-16 px-6">
 	<h1 class="text-center font-semibold text-4xl md:text-5xl mt-10 mb-4">About</h1>
 	<p class="text-center text-base md:text-lg mb-2">
 		Pathlight is an online tool that helps website owners optimize their website's performance by providing a comprehensive analysis of their Lighthouse scores and actionable insights for improvement.
