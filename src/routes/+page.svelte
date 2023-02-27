@@ -48,6 +48,14 @@
 	};
 </script>
 
+<svelte:head>
+	<title>Website Speed Test &amp; Audit - Pathlight</title>
+	<meta
+		name="description"
+		content="See how your site performs and reveal key areas for potential imporvements. Just enter your webpage's URL and you will recieve a detailed report on the page's Lighthouse scores and other Core Web Vitals."
+	/>
+</svelte:head>
+
 <div class="flex flex-col w-full p-5 sm:px-12 lg:px-20 2xl:px-72 pt-16 justify-center items-center">
 	<div class="flex flex-col w-full">
 		<div class="flex flex-col">
