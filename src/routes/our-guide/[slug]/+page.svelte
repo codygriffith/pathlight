@@ -11,7 +11,7 @@
 </svelte:head>
 
 <div id="article" class="flex flex-col w-full text-left sm:max-w-[65rem] p-5 sm:p-16 pt-8 mt-16 relative">
-	<h1 class="text-lg sm:text-2xl font-extrabold tracking-tight leading-10 text-slate-900 dark:text-slate-200 md:text-4xl">{data.title}</h1>
+	<h1 class="text-4xl sm:text-3xl font-extrabold tracking-tight leading-10 text-slate-900 dark:text-slate-200 md:text-4xl">{data.title}</h1>
 	<div class="mb-12">
 		<dl>
 			<dt class="sr-only">Date</dt>
@@ -22,10 +22,10 @@
 </div>
 
 <style>
-	:global(#article h1) {
+	/* :global(#article h1) {
 		margin: 1% 0 !important;
 		font-size: 2.25rem !important;
-	}
+	} */
 	:global(#article h2) {
 		font-size: 2rem !important;
 		font-weight: 700 !important;
