@@ -4,6 +4,8 @@
 </script>
 
 <svelte:head>
+	<title>About Pathlight</title>
+	<meta name="description" content="Pathlight is an online tool that helps website owners optimize their website's performance by providing a comprehensive analysis of their Lighthouse scores and actionable insights for improvement.">
 	<SchemaTag schema={websiteSchema} />
 </svelte:head>
 
