@@ -40,7 +40,7 @@
 		articleSection: data.category,
 		keywords: data.tags,
 		wordCount: data.wordCount,
-		genre: 'article'
+		genre: 'article',
 		// about: [
 		// 	{
 		// 		'@type': 'Thing',
