@@ -14,10 +14,10 @@
 
 <div class="max-w-[65rem] w-full break-words mb-16 px-6">
 	<h1 class="text-center font-semibold text-4xl md:text-5xl mt-10 mb-4">About Pathlight</h1>
-	<p class="text-center text-base md:text-lg mb-2">
+	<p class="text-center text-base md:text-lg">
 		Pathlight is an online tool that helps website owners optimize their website's performance by providing a comprehensive analysis of their Lighthouse scores and actionable insights for improvement.
 	</p>
-	<div class="flex mt-14 flex-col md:flex-row justify-between">
+	<div class="flex mt-10 flex-col md:flex-row justify-between">
 		<div class="w-full md:w-[45%]">
 			<h2 class="text-2xl font-semibold">Usage</h2>
 			<p class="mt-4">
