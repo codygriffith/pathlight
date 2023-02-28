@@ -5,6 +5,6 @@
 	export let schema: Schema;
 </script>
 
-<!-- <svelte:head> -->
+<svelte:head>
 	{@html serializeSchema(schema)}
-<!-- </svelte:head> -->
+</svelte:head>
