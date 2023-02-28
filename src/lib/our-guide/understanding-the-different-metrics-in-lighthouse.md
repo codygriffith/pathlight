@@ -2,7 +2,13 @@
 title: Understanding the different metrics in Lighthouse
 date: 02/21/2023
 dateString: Tuesday, Februrary 21, 2023
-summary: See how your site performs and reveal key areas for potential imporvements. Just enter your webpage's URL and you will recieve a detailed report on the page's Lighthouse scores and other Core Web Vitals.
+edited: 02/21/2023
+summary: Learn how to optimize web applications using different performance metrics in Lighthouse.
+author: Cody Griffith
+publisher: Pathlight
+category: Web Development
+tags: Lighthouse, web development, performance metrics, optimization
+wordCount: 923
 ---
 
 As the internet becomes increasingly integral to our daily lives, the performance of websites has become a critical factor in ensuring a positive user experience. In this context, Lighthouse has emerged as an essential tool for developers seeking to optimize the performance of their web applications.

@@ -6,13 +6,20 @@
 
 export async function load({ params }) {
     const post = await import(`../../../../src/lib/our-guide/${params.slug}.md`)
-    const { title, date, dateString } = post.metadata
+    const { title, date, edited, summary, author, publisher, tags, category, wordCount, dateString } = post.metadata
     const content = post.default
 
     return {
         content,
         title,
         date,
+        edited,
+        summary,
+        author,
+        publisher,
+        tags,
+        category,
+        wordCount,
         dateString,
     }
 }

@@ -4,9 +4,64 @@
 	 * @type {{ post: { title: any; content: any; }; }}
 	 */
 	export let data;
+	import { SchemaTag } from '$lib/schema';
+
+	const schema = {
+		'@context': 'https://schema.org',
+		'@type': 'Article',
+		mainEntityOfPage: {
+			'@type': 'WebPage',
+			'@id': `https://pathlight.dev/our-guide/${data.title.replaceAll(' ', '-')}`
+		},
+		headline: data.title,
+		description: data.summary,
+		author: {
+			'@type': 'Person',
+			name: data.author
+		},
+		datePublished: data.date,
+		dateModified: data.edited,
+		publisher: {
+			'@type': 'Organization',
+			name: data.publisher
+			// logo: {
+			// 	'@type': 'ImageObject',
+			// 	url: 'https://www.example.com/logo.png',
+			// 	width: 600,
+			// 	height: 60
+			// }
+		},
+		// image: {
+		// 	'@type': 'ImageObject',
+		// 	url: 'https://www.example.com/image.jpg',
+		// 	width: 1200,
+		// 	height: 630
+		// },
+		articleSection: data.category,
+		keywords: data.tags,
+		wordCount: data.wordCount,
+		genre: 'article',
+		// about: [
+		// 	{
+		// 		'@type': 'Thing',
+		// 		name: 'Lighthouse'
+		// 	},
+		// 	{
+		// 		'@type': 'Thing',
+		// 		name: 'Web Development'
+		// 	}
+		// ],
+		// educationalUse: [
+		// 	{
+		// 		'@type': 'EducationalUse',
+		// 		name: 'Reference'
+		// 	}
+		// ]
+	};
 </script>
 
 <svelte:head>
+	<SchemaTag {schema} />
 	<title>{data.title}</title>
 </svelte:head>
 
