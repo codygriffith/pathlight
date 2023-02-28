@@ -35,7 +35,7 @@
 			<p class="mt-4">If you have any questions or comments about our platform, we would love to hear from you. Please don't hesitate to contact us at help@pathlight.dev.</p>
 		</div>
 	</div>
-	<ul class="mt-14 md:mt-8">
+	<ul class="mt-14 md:mt-8 list-disc">
 		<h1 class="text-2xl font-semibold mb-4">Features</h1>
 		<li class="ml-6 mt-3">
 			<span class="font-bold">Lighthouse Score Analysis:</span> Pathlight provides a detailed analysis of your website's Lighthouse scores, including metrics such as page load speed, accessibility, and SEO.
@@ -49,9 +49,3 @@
 		</li>
 	</ul>
 </div>
-
-<style>
-	li {
-		list-style: disc;
-	}
-</style>
