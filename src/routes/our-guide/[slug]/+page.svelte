@@ -61,8 +61,8 @@
 </script>
 
 <svelte:head>
-	<SchemaTag {schema} />
 	<title>{data.title}</title>
+	<SchemaTag {schema} />
 </svelte:head>
 
 <div id="article" class="flex flex-col w-full text-left sm:max-w-[65rem] p-5 sm:p-16 pt-8 mt-16 relative">
