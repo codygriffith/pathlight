@@ -62,6 +62,7 @@
 
 <svelte:head>
 	<title>{data.title}</title>
+	<meta name="description" content="{data.summary}">
 	<SchemaTag {schema} />
 </svelte:head>
 
