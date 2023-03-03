@@ -30,7 +30,7 @@
 						<p>
 							{post.meta.summary}
 						</p>
-						<a class="flex items-center text-sm text-sky-500 font-medium mt-4" href="/our-guide/understanding-the-different-metrics-in-lighthouse">
+						<a class="flex items-center text-sm text-sky-500 font-medium mt-4" href="{post.path}">
 							<span class="absolute inset-0 sm:rounded-2xl" />
 							Read more
 
