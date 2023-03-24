@@ -11,6 +11,12 @@ tags: Lighthouse, web development, performance metrics, optimization
 wordCount: 923
 ---
 
+# Understanding the different metrics in Lighthouse
+
+{dateString}
+
+## Introduction
+
 As the internet becomes increasingly integral to our daily lives, the performance of websites has become a critical factor in ensuring a positive user experience. In this context, Lighthouse has emerged as an essential tool for developers seeking to optimize the performance of their web applications.
 
 In this article, we'll explore how Lighthouse metrics can help developers optimize web applications. These metrics are crucial for enhancing website performance and improving user engagement. Lighthouse uses various performance metrics to assess web pages, including First Contentful Paint, Largest Contentful Paint, Time to Interactive, Total Blocking Time, and Cumulative Layout Shift.
