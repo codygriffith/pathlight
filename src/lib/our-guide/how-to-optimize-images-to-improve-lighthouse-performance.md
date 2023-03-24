@@ -11,6 +11,12 @@ tags: Lighthouse, web development, performance metrics, image optimization
 wordCount: 1454
 ---
 
+# How to optimize images to improve Lighthouse performance
+
+{dateString}
+
+## Introduction
+
 Web performance is an essential aspect of website development and maintenance. Websites that load quickly, have a smooth user experience, and perform well on different devices tend to have better engagement and retention rates.
 
 One critical aspect of website performance is the optimization of images. Images can have a significant impact on website load times and user experience. Therefore, optimizing images is crucial for achieving fast load times and reducing bounce rates.
@@ -48,8 +54,8 @@ CDNs are networks of servers that are distributed globally. CDNs cache website c
 To optimize images for better website performance, there are several image optimization tools available that developers can use. These tools automate the image optimization process and make it easier for developers to optimize images without sacrificing quality.
 ### Google's PageSpeed Insights
 PageSpeed Insights is a tool developed by Google that analyzes website performance and provides suggestions for optimization. One of the recommendations that PageSpeed Insights makes is optimizing images. Developers can use PageSpeed Insights to identify images that need optimization and get recommendations for reducing their file size.
-Squoosh
-### Squoosh is an online image optimization tool developed by Google. Squoosh allows developers to upload images and compress them using different algorithms. Squoosh offers a real-time preview of how the compressed image will look, allowing developers to find a balance between image quality and file size.
+### Squoosh
+Squoosh is an online image optimization tool developed by Google. Squoosh allows developers to upload images and compress them using different algorithms. Squoosh offers a real-time preview of how the compressed image will look, allowing developers to find a balance between image quality and file size.
 ### Other Image Optimization Tools
 There are several other image optimization tools available that developers can use. Some popular tools include TinyPNG, ImageOptim, Kraken.io, and Cloudinary. These tools automate the image optimization process, allowing developers to compress images without sacrificing quality.
 
