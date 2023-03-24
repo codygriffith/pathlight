@@ -11,6 +11,12 @@ tags: Lighthouse, web development, performance metrics, optimization
 wordCount: 923
 ---
 
+# Quick wins: easy fixes to improve your Lighthouse score
+
+{dateString}
+
+## Introduction
+
 In today's digital age, website performance is more important than ever before. With users expecting lightning-fast load times and seamless browsing experiences, a poorly performing website can lead to lost visitors and revenue. This is where Lighthouse comes in.
 
 Lighthouse is an open-source tool developed by Google that audits and measures the performance, accessibility, and best practices of a website. It provides a comprehensive report of your website's performance, identifying areas that need improvement and offering suggestions on how to optimize it.
