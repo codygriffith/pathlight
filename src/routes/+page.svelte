@@ -54,7 +54,7 @@
 					autocomplete="url"
 					bind:value={url}
 					required
-					class="w-full px-5 py-3 border border-transparent placeholder-gray-500 ring-gray-400 ring-2 focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white focus:border-white rounded-md"
+					class="w-full px-5 py-3 border border-transparent placeholder-gray-500 ring-gray-400 ring-2 text-black focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white focus:border-white rounded-md"
 					placeholder="Enter a url"
 				/>
 				<div
