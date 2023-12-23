@@ -10,7 +10,7 @@
 	<div class="flex flex-col">
 		<h2 class="text-5xl font-extrabold tracking-tight sm:text-4xl text-gray-600 dark:text-white" id="newsletter-headline">Our Guide to Acing Your Web Audits</h2>
 		<p class="mt-4 w-full text-lg sm:text-xl leading-6">
-			See how your site performs and reveal key areas for potential imporvements. Just enter your webpage's URL and you will recieve a detailed report on the page's Lighthouse scores and other Core
+			See how your site performs and reveal key areas for imporvements. Just enter your webpage's URL and you will recieve a detailed report on the page's Lighthouse scores and other Core
 			Web Vitals.
 		</p>
 	</div>
