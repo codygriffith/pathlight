@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: codygriffith/pathlight
+  branch: main
+
+media_folder: "images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "src/lib/our-guide"
+    create: true
+    slug: "{{title}}-{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Summary", name: "summary", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
