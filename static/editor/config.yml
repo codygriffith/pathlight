@@ -3,7 +3,7 @@ backend:
   repo: codygriffith/pathlight
   branch: main
 
-media_folder: "images/uploads"
+media_folder: "static/images/uploads"
 
 collections:
   - name: "blog"
