@@ -12,7 +12,7 @@ publisher: Pathlight
 category: Web Development
 dateString: Tuesday, Februrary 21, 2023
 ---
-![](/static/images/uploads/nathan-jennings-vspsf4f5pi0-unsplash-thin.jpg)
+![]()
 
 ## Understanding the Different Metrics in Lighthouse
 
