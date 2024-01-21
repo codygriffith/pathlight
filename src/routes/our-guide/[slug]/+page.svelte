@@ -117,7 +117,7 @@
 	<SchemaTag {schema} />
 </svelte:head>
 
-<article id="article" class="flex flex-row-reverse w-full text-left p-5 sm:p-16 pt-8 mt-16 relative justify-between">
+<article id="article" class="flex flex-row-reverse w-full text-left sm:p-16 sm:pt-0 mt-0 relative justify-between">
 	<!-- <h1 class="text-4xl sm:text-3xl font-extrabold tracking-tight leading-10 text-slate-900 dark:text-slate-200 md:text-4xl">{data.title}</h1> -->
 	<!-- <div class="absolute pl-5 sm:pl-16 top-3 inset-x-0 text-slate-700 dark:text-slate-300"><time datetime="2022-12-15T15:00:00.000Z">{data.dateString}</time></div> -->
 	<svelte:component this={data.content} />
@@ -148,7 +148,9 @@
 		font-size: .92rem;
 		height: fit-content;
     	position: sticky;
+		margin-top: 2vw;
     	top: 2vw;
+		z-index: 20;
 	}
 	:global(code::before, code::after){
 		content: '`';
@@ -165,8 +167,20 @@
 	:global(.toc>ol>li>a) {
     	display: none;
 	}
+	:global(#article){
+		/* overflow: hidden; */
+	}
+	:global(#article > p){
+		position: absolute;
+		/* margin-top: -2vw !important; */
+		width: 65%;
+		left: 0;
+		/* opacity: .9; */
+	}
 	:global(#article > section){
 		width: 60%;
+		margin-top: 10vw;
+		z-index: 2;
 	}
 	:global(#article h1) {
 		font-size: 2.3rem !important;
@@ -191,7 +205,7 @@
 		font-weight: 500 !important;
 		margin-top: 4% !important;
 	}
-	:global(#article p) {
+	:global(#article section p) {
 		margin: 1% 0 !important;
 		font-size: 1.1rem !important;
 		line-height: 1.7rem !important;
