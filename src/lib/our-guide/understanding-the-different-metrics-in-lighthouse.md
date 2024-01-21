@@ -12,8 +12,6 @@ publisher: Pathlight
 category: Web Development
 dateString: Tuesday, Februrary 21, 2023
 ---
-![]()
-
 ## Understanding the Different Metrics in Lighthouse
 
 Lighthouse, a powerful tool developed by Google, serves a pivotal role in the realm of web development and optimization. At its core, Lighthouse is designed to audit various aspects of websites, including performance, accessibility, search engine optimization (SEO), and more. This tool is instrumental for developers and website owners alike, providing a comprehensive overview of a site's health and efficiency.
