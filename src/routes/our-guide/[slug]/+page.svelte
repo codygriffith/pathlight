@@ -1,25 +1,28 @@
 <script>
 	export let data;
-	import { SchemaTag } from '$lib/schema';
+	import { SchemaTag } from "$lib/schema";
 
 	const schema = {
-		'@context': 'https://schema.org',
-		'@type': 'Article',
+		"@context": "https://schema.org",
+		"@type": "Article",
 		mainEntityOfPage: {
-			'@type': 'WebPage',
-			'@id': `https://pathlight.dev/our-guide/${data.title.replaceAll(' ', '-')}`
+			"@type": "WebPage",
+			"@id": `https://pathlight.dev/our-guide/${data.title.replaceAll(
+				" ",
+				"-",
+			)}`,
 		},
 		headline: data.title,
 		description: data.summary,
 		author: {
-			'@type': 'Person',
-			name: data.author
+			"@type": "Person",
+			name: data.author,
 		},
 		datePublished: data.date,
 		dateModified: data.edited,
 		publisher: {
-			'@type': 'Organization',
-			name: data.publisher
+			"@type": "Organization",
+			name: data.publisher,
 			// logo: {
 			// 	'@type': 'ImageObject',
 			// 	url: 'https://www.example.com/logo.png',
@@ -36,7 +39,7 @@
 		articleSection: data.category,
 		keywords: data.tags,
 		wordCount: data.wordCount,
-		genre: 'article'
+		genre: "article",
 		// about: [
 		// 	{
 		// 		'@type': 'Thing',
@@ -55,60 +58,62 @@
 		// ]
 	};
 
-	import { onMount } from 'svelte';
-  import { tick } from 'svelte';
+	import { onMount } from "svelte";
+	import { tick } from "svelte";
 
-  let observer;
-  let activeIndex = '';
-  let previousActiveLink;
+	let observer;
+	let activeIndex = "";
+	let previousActiveLink;
 
-  onMount(async () => {
-    // Wait for the next DOM update
-    await tick();
+	onMount(async () => {
+		// Wait for the next DOM update
+		await tick();
 
-    const headings = document.querySelectorAll('.toc > h1, h2, h3, h4, h5, h6');
+		const headings = document.querySelectorAll(
+			".toc > h1, h2, h3, h4, h5, h6",
+		);
 
-    observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          changeActiveIndex(`#${entry.target.id}`);
-        });
-      },
-      {
-        rootMargin: '-50% 0px',
-      }
-    );
+		observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (!entry.isIntersecting) return;
+					changeActiveIndex(`#${entry.target.id}`);
+				});
+			},
+			{
+				rootMargin: "-50% 0px",
+			},
+		);
 
-    headings.forEach((heading) => {
-      if (heading.id) {
-        observer.observe(heading);
-      }
-    });
+		headings.forEach((heading) => {
+			if (heading.id) {
+				observer.observe(heading);
+			}
+		});
 
-    return () => {
-      headings.forEach((heading) => {
-        observer.unobserve(heading);
-      });
-	  observer.disconnect();
-    };
-  });
+		return () => {
+			headings.forEach((heading) => {
+				observer.unobserve(heading);
+			});
+			observer.disconnect();
+		};
+	});
 
-  function changeActiveIndex(id) {
-    if (previousActiveLink) {
-      previousActiveLink.classList.remove('text-blue-500');
-    }
+	function changeActiveIndex(id) {
+		if (previousActiveLink) {
+			previousActiveLink.classList.remove("text-blue-500");
+		}
 
-    const activeLink = document.querySelector(`a[href='${id}']`);
-    if (activeLink) {
-      activeLink.classList.add('text-blue-500');
-      previousActiveLink = activeLink;
-    }
+		const activeLink = document.querySelector(`a[href='${id}']`);
+		if (activeLink) {
+			activeLink.classList.add("text-blue-500");
+			previousActiveLink = activeLink;
+		}
 
-    activeIndex = id;
-  }
+		activeIndex = id;
+	}
 
-  $: console.log(activeIndex)
+	$: console.log(activeIndex);
 </script>
 
 <svelte:head>
@@ -117,7 +122,11 @@
 	<SchemaTag {schema} />
 </svelte:head>
 
-<article id="article" class="flex flex-row-reverse w-full text-left sm:p-16 sm:pt-0 mt-0 relative justify-between">
+<article
+	id="article"
+	class="flex flex-row-reverse w-full text-left sm:pl-32 pl-32 sm:p-16 sm:pt-0 mt-0 relative justify-between"
+>
+
 	<!-- <h1 class="text-4xl sm:text-3xl font-extrabold tracking-tight leading-10 text-slate-900 dark:text-slate-200 md:text-4xl">{data.title}</h1> -->
 	<!-- <div class="absolute pl-5 sm:pl-16 top-3 inset-x-0 text-slate-700 dark:text-slate-300"><time datetime="2022-12-15T15:00:00.000Z">{data.dateString}</time></div> -->
 	<svelte:component this={data.content} />
@@ -133,51 +142,67 @@
 		/* border: 1px solid #e1e1e1; */
 		border-radius: 4px;
 		padding: 1em;
-		font-family: 'Courier New', Courier, monospace;
+		font-family: "Courier New", Courier, monospace;
 		font-size: 0.9em;
 		white-space: pre-wrap;
 		line-height: 1.4;
 		overflow-x: auto;
 	}
-	:global(.toc){
+	:global(.toc) {
 		width: 30%;
-		border-radius: .4rem;
-    	box-shadow: inset 0.2vw 0.2vw 1vw #2625252a;
-    	padding: 2%;
-    	background: #0000000d;
-		font-size: .92rem;
+		border-radius: 0.4rem;
+		box-shadow: inset 0.2vw 0.2vw 1vw #2625252a;
+		padding: 2%;
+		background: #0000000d;
+		font-size: 0.92rem;
 		height: fit-content;
-    	position: sticky;
+		position: sticky;
 		margin-top: 2vw;
-    	top: 2vw;
+		top: 2vw;
 		z-index: 20;
 	}
-	:global(code::before, code::after){
-		content: '`';
+	:global(code::before, code::after) {
+		content: "`";
 	}
-	:global(.toc::before){
-		content: 'Table of Contents';
+	:global(.toc::before) {
+		content: "Table of Contents";
 		font-size: 1.5vw;
-    	font-weight: 500;
+		font-weight: 500;
 	}
-	:global(.toc>ol>li::marker) {
-    	font-size: 0 !important;
-    	width: 0 !important;
+	:global(.toc > ol > li::marker) {
+		font-size: 0 !important;
+		width: 0 !important;
 	}
-	:global(.toc>ol>li>a) {
-    	display: none;
+	:global(.toc > ol > li > a) {
+		display: none;
 	}
-	:global(#article){
+	:global(#article) {
 		/* overflow: hidden; */
 	}
-	:global(#article > p){
+	:global(#article > p) {
 		position: absolute;
 		/* margin-top: -2vw !important; */
 		width: 65%;
 		left: 0;
 		/* opacity: .9; */
+		padding-left: 3vw;
 	}
-	:global(#article > section){
+	:global(#article > p:after) {
+		content: "";
+		position: absolute;
+		z-index: 1;
+		bottom: 0;
+		left: 0;
+		pointer-events: none;
+		background-image: linear-gradient(
+			to bottom,
+			rgba(255, 255, 255, 0) 0%,
+			#374151 90%
+		);
+		width: 100%;
+		height: 15em;
+	}
+	:global(#article > section) {
 		width: 60%;
 		margin-top: 10vw;
 		z-index: 2;
@@ -215,7 +240,7 @@
 		margin-left: 4%;
 		list-style: disc;
 	}
-	
+
 	:global(nav > ol, nav > ol > li) {
 		list-style: none !important;
 		margin: 1% 0 !important;
@@ -233,6 +258,5 @@
 		margin-left: 0% !important;
 	}
 	:global(#date) {
-		
 	}
 </style>
