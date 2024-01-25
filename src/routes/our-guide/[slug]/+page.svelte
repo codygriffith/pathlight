@@ -126,7 +126,6 @@
 	id="article"
 	class="flex flex-row-reverse w-full text-left sm:pl-32 pl-32 sm:p-16 sm:pt-0 mt-0 relative justify-between"
 >
-
 	<!-- <h1 class="text-4xl sm:text-3xl font-extrabold tracking-tight leading-10 text-slate-900 dark:text-slate-200 md:text-4xl">{data.title}</h1> -->
 	<!-- <div class="absolute pl-5 sm:pl-16 top-3 inset-x-0 text-slate-700 dark:text-slate-300"><time datetime="2022-12-15T15:00:00.000Z">{data.dateString}</time></div> -->
 	<svelte:component this={data.content} />
@@ -177,7 +176,27 @@
 		display: none;
 	}
 	:global(#article) {
-		/* overflow: hidden; */
+		font-family:
+			Söhne,
+			ui-sans-serif,
+			system-ui,
+			-apple-system,
+			"Segoe UI",
+			Roboto,
+			Ubuntu,
+			Cantarell,
+			"Noto Sans",
+			sans-serif,
+			"Helvetica Neue",
+			Arial,
+			"Apple Color Emoji",
+			"Segoe UI Emoji",
+			"Segoe UI Symbol",
+			"Noto Color Emoji";
+			font-weight: 300;
+	}
+	:global(#article strong) {
+		font-weight: 500;
 	}
 	:global(#article > p) {
 		position: absolute;
@@ -215,19 +234,19 @@
 	}
 	:global(#article h2) {
 		font-size: 2rem !important;
-		font-weight: 500 !important;
+		font-weight: 700 !important;
 		margin-top: 6% !important;
 	}
 	:global(#article h3) {
 		margin: 1% 0 !important;
 		font-size: 1.5rem !important;
-		font-weight: 500 !important;
+		font-weight: 700 !important;
 		margin-top: 4% !important;
 	}
 	:global(#article h4) {
 		margin: 1% 0 !important;
 		font-size: 1.3rem !important;
-		font-weight: 500 !important;
+		font-weight: 400 !important;
 		margin-top: 4% !important;
 	}
 	:global(#article section p) {
