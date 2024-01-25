@@ -20,8 +20,6 @@ Lighthouse, a powerful tool developed by Google, serves a pivotal role in the re
 
 Understanding the metrics that Lighthouse provides is crucial for anyone looking to optimize their website. These metrics are not just numbers; they are insights into how well your site performs, how accessible it is to a diverse audience, and how effectively it can be discovered through search engines. By delving into these metrics, you can pinpoint specific areas of improvement, leading to a more robust, user-friendly, and visible online presence.
 
-![](/images/uploads/nathan-jennings-vspsf4f5pi0-unsplash.jpg)
-
 ### First Contentful Paint (FCP)
 
 **First Contentful Paint (FCP)** is a critical metric in Lighthouse that measures the time it takes for the first piece of content to appear on the screen during a page load. This content could be anything from text, images, to SVGs. FCP is a direct indicator of how quickly a user perceives a website to be loading. The faster the FCP, the quicker a user feels engaged with the site.
